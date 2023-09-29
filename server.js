@@ -41,13 +41,17 @@ app.use(function (req, res, next) {
 // import routes
 const indexRouter = require("./routes/index")
 const authRouter = require("./routes/auth")
+const musicRouter =require("./routes/music")
+
 // mount Routes
 app.use("/", indexRouter)
 app.use("/", authRouter)
+app.use("/", musicRouter)
 // listen to requests on port
 app.listen(port, () => {
-  console.log(`Lab part 1 is running on port ${port}`)
+  console.log(`MongoDb is working properly on ${port}`)
 })
+
 
 // mongoDB connection
 mongoose
