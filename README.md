@@ -12,6 +12,8 @@ The Music Library is a web application designed for music enthusiasts and collec
 #### Entity Relationship Diagram
 [ERD](https://lucid.app/lucidchart/53a0209d-2515-4ae9-b2e0-55e4cbf8dc99/edit?invitationId=inv_ac901b29-4cdb-4b5a-b47e-ae37a9ed6181) 
 
+<img width="452" alt="ERD" src="https://media.git.generalassemb.ly/user/50395/files/393329a9-e3a0-4ad9-9e3a-629493c58e74">
+
 #### WireFrame
 [Adobe xd prototype](https://xd.adobe.com/view/5e512f6f-ec40-4177-b349-e3ddd35083e6-0b02/)
 
