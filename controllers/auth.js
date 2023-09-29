@@ -40,11 +40,10 @@ exports.auth_logout_get = (req, res) => {
     res.redirect("/auth/signin")
   })
 }
-// ...
 
-// user profile update
+// user profile get
 exports.auth_edit_get = (req, res) => {
-  const userId = req.params.id
+  const userId = req.user._id
   User.findById(userId)
     .then((user) => {
       res.render("auth/edit", { user })
@@ -53,10 +52,9 @@ exports.auth_edit_get = (req, res) => {
       console.log(err)
     })
 }
-
-// post the user profile update
+// user profile update post
 exports.auth_update_post = (req, res) => {
-  const userId = req.params.userId
+  const userId = req.user._id
   const { name, emailAddress, password, profilePicture, gender, dateOfBirth } =
     req.body
   User.findByIdAndUpdate(userId, {
@@ -68,7 +66,7 @@ exports.auth_update_post = (req, res) => {
     dateOfBirth,
   })
     .then(() => {
-      res.redirect("/") //
+      res.redirect("/auth/detail")
     })
     .catch((err) => {
       console.log(err)
