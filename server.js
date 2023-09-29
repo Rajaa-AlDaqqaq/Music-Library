@@ -46,7 +46,7 @@ app.use("/", indexRouter)
 app.use("/", authRouter)
 // listen to requests on port
 app.listen(port, () => {
-  console.log(`Lab part 1 is running on port ${port}`)
+  console.log(`Music Library is running on port ${port}`)
 })
 
 // mongoDB connection
