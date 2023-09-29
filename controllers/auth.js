@@ -40,3 +40,45 @@ exports.auth_logout_get = (req, res) => {
     res.redirect("/auth/signin")
   })
 }
+
+// user profile get
+exports.auth_edit_get = (req, res) => {
+  const userId = req.user._id
+  User.findById(userId)
+    .then((user) => {
+      res.render("auth/edit", { user })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+// user profile update post
+exports.auth_update_post = (req, res) => {
+  const userId = req.user._id
+  const { name, emailAddress, password, profilePicture, gender, dateOfBirth } =
+    req.body
+  User.findByIdAndUpdate(userId, {
+    name,
+    emailAddress,
+    password,
+    profilePicture,
+    gender,
+    dateOfBirth,
+  })
+    .then(() => {
+      res.redirect("/auth/detail")
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+// show detail
+exports.auth_show_get = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).exec()
+    res.render("auth/detail", { user })
+  } catch (err) {
+    console.log(err)
+    res.redirect("/")
+  }
+}

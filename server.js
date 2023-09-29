@@ -49,7 +49,7 @@ app.use("/", authRouter)
 app.use("/", musicRouter)
 // listen to requests on port
 app.listen(port, () => {
-  console.log(`MongoDb is working properly on ${port}`)
+  console.log(`Music Library is running on port ${port}`)
 })
 
 
