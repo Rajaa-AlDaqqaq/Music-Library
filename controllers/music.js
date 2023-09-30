@@ -29,11 +29,23 @@ exports.music_create_post = (req, res) => {
     })
 }
 
-exports.music_showmusic_get = (req, res) => {
+exports.music_index_get = (req, res) => {
   Music.find()
     .then((musics) => {
       console.log(musics)
       res.render('music/index', { musics, moment })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+exports.music_show_get = (req, res) => {
+  console.log(req.query.id)
+  Music.findById(req.query.id)
+    // .populate('category')
+    .then((music) => {
+      res.render('music/detail', { music, moment })
     })
     .catch((err) => {
       console.log(err)

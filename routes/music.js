@@ -17,6 +17,7 @@ const upload = multer({ storage: storage })
 
 // controller
 const musicCtrl = require('../controllers/music')
+
 // Routes
 router.get('/music/add', musicCtrl.music_create_get)
 router.post(
@@ -24,7 +25,8 @@ router.post(
   upload.fields([{ name: 'audio' }, { name: 'image' }]),
   musicCtrl.music_create_post
 )
-router.get('/music/index', musicCtrl.music_showmusic_get)
+router.get('/music/index', musicCtrl.music_index_get)
+router.get('/music/detail', musicCtrl.music_show_get)
 
 // export
 module.exports = router
