@@ -15,7 +15,8 @@ exports.music_create_post = (req, res) => {
     description: req.body.description,
     lyrics: req.body.lyrics,
     image: req.files.image[0].path,
-    audio: req.files.audio[0].path
+    audio: req.files.audio[0].path,
+    user: req.user._id
   })
 
   music
@@ -88,7 +89,8 @@ console.log('Uploaded Files:', req.files);
     description: req.body.description,
     lyrics: req.body.lyrics,
     image: req.files.image[0].path,
-    audio: req.files.audio[0].path
+    audio: req.files.audio[0].path,
+    user: req.user._id
   })
     .then(() => {
       res.redirect('/music/index')
@@ -96,4 +98,18 @@ console.log('Uploaded Files:', req.files);
     .catch((err) => {
       console.log(err)
     })
+}
+
+
+exports.music_myLibrary_get = (req, res) => {
+
+  const userId = req.user._id;
+
+  Music.find({ user: userId })
+    .then((userMusic) => {
+      res.render('music/myLibrary', { userMusic, moment });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }

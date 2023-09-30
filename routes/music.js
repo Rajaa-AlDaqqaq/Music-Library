@@ -29,6 +29,7 @@ router.post(
   musicCtrl.music_create_post
 )
 router.get('/music/index', musicCtrl.music_index_get)
+router.get('/music/myLibrary', musicCtrl.music_myLibrary_get)
 router.get('/music/detail', musicCtrl.music_show_get)
 router.get('/music/delete', musicCtrl.music_delete_get)
 router.get('/music/edit', musicCtrl.music_edit_get)
