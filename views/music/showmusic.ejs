@@ -18,10 +18,10 @@
       <td><%= music.author %></td>
       <td><%= music.description %></td>
       <td><%= music.lyrics %></td>
-      <img src="<%= music.image %>" alt="<%= music.name %> Image" width="300" height="200">
+      <td><img src="<%= music.image.replace(/public/, '') %>" alt="<%= music.name %> Image" width="300" height="200"></td>
       <td>
         <audio controls>
-          <source src="<%= music.audio %>" type="audio/mpeg">
+          <source src="<%= music.audio.replace(/public/, '') %>" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </td>
