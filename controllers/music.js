@@ -22,7 +22,7 @@ exports.music_create_post = (req, res) => {
   music
     .save()
     .then(() => {
-      res.send('Music added successfully!')
+      res.redirect('/music/index')
     })
     .catch((err) => {
       console.error(err)
