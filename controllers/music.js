@@ -62,3 +62,38 @@ exports.music_delete_get = (req, res) => {
       console.log(err)
     })
 }
+
+exports.music_edit_get = (req, res) => {
+  console.log(req.query.id)
+  Music.findById(req.query.id)
+    .then((music) => {
+      res.render('music/edit', { music })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+exports.music_update_post = (req, res) => {
+  console.log(req.body.id)
+  console.log('File Uploads - Audio Path: ', req.files.audio[0].path)
+  console.log('File Uploads - Image Path: ', req.files.image[0].path)
+  console.log('Request Body:', req.body);
+console.log('Uploaded Files:', req.files);
+
+
+  Music.findByIdAndUpdate(req.body.id, {
+    name: req.body.name,
+    author: req.body.author,
+    description: req.body.description,
+    lyrics: req.body.lyrics,
+    image: req.files.image[0].path,
+    audio: req.files.audio[0].path
+  })
+    .then(() => {
+      res.redirect('/music/index')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
