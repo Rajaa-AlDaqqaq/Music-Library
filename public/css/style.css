@@ -1,0 +1,42 @@
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #2C343A;
+  
+}
+
+nav{
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+html, body{
+  background-image: url(/background/bg.png);
+  background-size: cover;
+  color: white;
+  font-family: 'Bauhaus 93', sans-serif;
+  margin: 0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#dropdown-link, .navLink{
+  background-color: transparent;
+  border: 0;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  /* font-family: 'Bauhaus 93', sans-serif; */
+}
+
+.logo{
+  color: white;
+  text-decoration: none;
+  /* font-family: 'Bauhaus 93', sans-serif; */
+}
