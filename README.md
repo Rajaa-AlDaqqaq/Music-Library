@@ -7,7 +7,7 @@ The Music Library is a web application designed for music enthusiasts and collec
 
 ***
 #### Task Tracking
-[Trello board](https://trello.com/b/jTgaFNrM/ga-music)
+[Trello board](https://trello.com/b/F2upWrZ8/ga-studio)
 
 #### Entity Relationship Diagram
 [ERD](https://lucid.app/lucidchart/53a0209d-2515-4ae9-b2e0-55e4cbf8dc99/edit?invitationId=inv_ac901b29-4cdb-4b5a-b47e-ae37a9ed6181) 
