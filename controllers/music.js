@@ -51,3 +51,14 @@ exports.music_show_get = (req, res) => {
       console.log(err)
     })
 }
+
+exports.music_delete_get = (req, res) => {
+  console.log(req.query.id)
+  Music.findByIdAndDelete(req.query.id)
+    .then(() => {
+      res.redirect('/music/index')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
