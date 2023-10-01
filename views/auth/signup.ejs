@@ -1,5 +1,5 @@
 <h1>Create a new Account</h1>
-<form method="POST"action="/auth/signup">
+<form method="POST" action="/auth/signup">
 
 
   <div>
@@ -19,12 +19,18 @@
   <br>
   <div>
     <label>Profile Picture</label>
-    <input type="string" name="profilePicture">
+    <input type="file" name="profilePicture" accept="image/*">
+    
   </div>
   <br>
   <div>
     <label>gender</label>
-    <input type="text" name="gender">
+    <br>
+      <input type="radio" name="gender" id="male" value="M" checked>
+      <label for="male">Male</label>
+      <br>
+      <input type="radio" name="gender" id="female" value="F">
+      <label for="female">Female</label>
   </div>
   <br>
   <div>
