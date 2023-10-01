@@ -1,5 +1,25 @@
 <!-- index - Explore - display musics from all users -->
 <h1>Explore!</h1>
+<div class="cards">
+<% musics.forEach(function(music) { %>  
+
+<div class="card" style="width: 18rem;">
+  <img src="<%= music.image.replace(/public/, '') %>" class="card-img-top" alt="<%= music.name %> Image">
+  <div class="card-body">
+    <h5 class="card-title"><a href="/music/detail?id=<%= music._id %>"><%= music.name %></a></h5>
+    <p class="card-text">
+      Author: <%= music.author %>
+      <br>
+      Description: <%= music.description %>
+      
+    </p>
+    <a href="/music/detail?id=<%= music._id %>" class="btn btn-primary">Play</a>
+  </div>
+</div>
+
+<% }) %>
+
+</div>
 
 <table class="table table-striped" >
   <tr>

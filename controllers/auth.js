@@ -54,6 +54,7 @@ exports.auth_edit_get = (req, res) => {
       console.log(err)
     })
 }
+
 // user profile update post
 exports.auth_update_post = async (req, res) => {
   const userId = req.user._id
