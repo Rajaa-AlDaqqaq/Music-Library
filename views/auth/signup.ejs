@@ -1,42 +1,46 @@
-<h1>Create a new Account</h1>
-<form method="POST" action="/auth/signup">
+<body>
+  
+<div class="form-content">
 
-<div class="all content">
-  <div>
-    <label>Name</label>
-    <input type="text" name="name">
+<form method="POST" action="/auth/signup">
+<h1>Create a new Account</h1>
+
+  <div class="col-md-7">
+    <label class="form-text">Name</label>
+    <input type="text" name="name" class="form-control"/>
   </div>
   <br>
-  <div>
-    <label>Email Address</label>
-    <input type="email" name="emailAddress">
+  <div class="col-md-7">
+    <label class="form-text">Email Address</label>
+    <input type="email" name="emailAddress" class="form-control"/>
   </div>
   <br>
-  <div>
-    <label>Password</label>
-    <input type="password" name="password" />
+  <div class="col-md-7">
+    <label class="form-text">Password</label>
+    <input type="password" name="password" class="form-control"/>
   </div>
   <br>
-  <div>
-    <label>Profile Picture</label>
-    <input type="file" name="profilePicture" accept="image/*">
+  <div class="col-md-7">
+    <label class="form-text">Profile Picture</label>
+    <input type="file" name="profilePicture" accept="image/*"class="form-control"/>
     
   </div>
   <br>
-  <div>
-    <label>gender</label>
+  <div class="col-md-7">
+    <label class="form-text">gender</label>
     <br>
-      <input type="radio" name="gender" id="male" value="M" checked>
-      <label for="male">Male</label>
+      <input type="radio" name="gender" id="male" value="M" class="form-text">
+      <label for="male" class="form-text">Male</label>
       <br>
-      <input type="radio" name="gender" id="female" value="F">
-      <label for="female">Female</label>
+      <input type="radio" name="gender" id="female" value="F" class="form-text">
+      <label for="female" class="form-text">Female</label>
   </div>
   <br>
-  <div>
-    <label>Date Of Birth</label>
-    <input type="date" name="dateOfBirth">
+  <div class="col-md-7">
+    <label class="form-text">Date Of Birth</label>
+    <input type="date" name="dateOfBirth" class="form-control"/>
   </div>
-  <div><button type="submit">Sign Up</button></div>
+  <div><button type="submit" class="btn btn-primary">Sign Up</button></div>
 </form>
 </div>
+</body>

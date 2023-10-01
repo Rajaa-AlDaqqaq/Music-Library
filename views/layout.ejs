@@ -3,28 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://fonts.cdnfonts.com/css/bauhaus-93" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Melody</title>
 </head>
-<body>
-  <h1><a href="/" id="noStyle">MELODY APP</a></h1>
-  <br><br>
-  <hr>
+
+<header>
+  <h1><a href="/" class="logo">MELODY</a></h1>
   <nav>
-    
+    <% if (currentUser) { %>
 
+      <a href="/music/index" class="navLink">EXPLORE</a>
 
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">
+          PROFILE
+        </a>
 
-<% if (currentUser) { %>
-    
-    <a href="/auth/logout">Log Out</a>
-    <a href="/auth/edit">Edit Profile</a>
-    <a href="/auth/detail">View Profile</a>
-    Hi <%= currentUser.name %> 
-  <% } else { %>
-    <a href="/auth/signin">Sign in</a>
-    <a href="/auth/signup">Create new Account</a>
-  <% } %>
-</nav>  
+        <ul class="dropdown-menu">
+          
+          <li><a class="dropdown-item" href="/auth/detail">VIEW PROFILE</a></li>
+          <li><a class="dropdown-item" href="/auth/edit">EDIT PROFILE</a></li>
+          <li></li>
+
+        </ul>
+      </div>
+      
+      <a href="/music/myLibrary" class="navLink">MY LIBRARY</a>
+      <a href="/category/index" class="navLink">CATEGORIES</a>
+      <a href="/playlist/index" class="navLink">PLAYLISTS</a>
+      <a href="/music/add" class="navLink">ADD MUSIC</a>
+      <a href="/auth/logout" class="navLink">LOG OUT</a>
+      
+      
+      <% } else { %>
+        <a href="/auth/signin" class="navLink">Sign in</a>
+        <a href="/auth/signup" class="navLink">Create new Account</a>
+        <% } %>
+  </nav>  
+
+</header>
+  <body>
+    <!-- <BR><BR> -->
 
   <%- body %>
 

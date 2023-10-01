@@ -1,1 +1,12 @@
-<h1>Welcome to Melody App</h1>
+
+<% if (currentUser) { %>
+  
+  <h1 class="user"><span class="highlighted">Hi </span> <%= currentUser.name %>!</h1>
+  <br>
+  <a href="/music/index" class="ExploreBtn">Explore!</a>
+  
+  <% }else{ %>
+
+    <h1 class="highlighted">Your Music, <br>Your <span class="user">MELODY!</span></h1>
+
+<% } %>

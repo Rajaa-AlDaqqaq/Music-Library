@@ -5,6 +5,7 @@ const multer = require("multer")
 
 // hashing that bcrypt
 const salt = 10
+
 // signup get
 exports.auth_signup_get = (req, res) => {
   res.render("auth/signup")
