@@ -14,6 +14,21 @@
       
     </p>
     <a href="/music/detail?id=<%= music._id %>" class="btn btn-primary">Play</a>
+
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">
+        Add to playlist
+      </a>
+
+      <ul class="dropdown-menu">
+        
+        <li><a class="dropdown-item" href="/auth/detail">VIEW PROFILE</a></li>
+        <li><a class="dropdown-item" href="/auth/edit">EDIT PROFILE</a></li>
+        <li></li>
+
+      </ul>
+    </div>
+
   </div>
 </div>
 
@@ -31,8 +46,7 @@
     <th>Audio</th>
     <th>Created At</th>
     <th>Updated At</th>
-    <th>Edit</th>
-    <th>Delete</th>
+
   </tr>
 
   <% musics.forEach(function(music) { %>  
@@ -50,8 +64,7 @@
       </td>
       <td><%= moment(music.createdAt).fromNow() %></td>
       <td><%= moment(music.updatedAt).fromNow() %></td>
-      <td> <a href="/music/edit?id=<%= music._id %>" class="btn btn-outline-secondary"> Edit </a> </td>
-      <td> <a href="/music/delete?id=<%= music._id %>" class="btn btn-outline-danger"> Delete </a> </td>
+      
     </tr>
 
   <% }) %>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>playlist</title>
+</head>
+<body>
+  <form action="/playlist/add" method="POST">
+    <div>
+      <label>Playlists</label>
+      <input type="text" name="name">
+</div>
+      <input type="hidden" name="id" value="<%= currentUser._id %>">
+      <button type="submit"> Add playlist </button>
+  </form>
+  </body>

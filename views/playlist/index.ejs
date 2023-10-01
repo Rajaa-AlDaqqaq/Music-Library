@@ -1,0 +1,8 @@
+<h1>Playlists</h1>
+<div class="list">
+<ul>
+  <% userPlaylist.forEach(function(playlist) { %>  
+    <li> <a href="/playlist/detail?id=<%= playlist._id %>"><%= playlist.name %></a>  <a href="/playlist/edit?id=<%= playlist._id %>" class="btn btn-outline-secondary"> Edit </a> <a href="/playlist/delete?id=<%= playlist._id %>" class="btn btn-outline-danger"> Delete </a></li>
+<% }) %>
+</ul>
+</div>
