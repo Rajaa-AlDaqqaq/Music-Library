@@ -69,3 +69,14 @@ exports.playlist_delete_get = (req, res) => {
       console.log(err)
     })
 }
+
+exports.playlist_show_get = (req, res) => {
+  console.log(req.query.id)
+  Playlist.findById(req.query.id)
+    .then((playlist) => {
+      res.render('playlist/detail', { playlist })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
