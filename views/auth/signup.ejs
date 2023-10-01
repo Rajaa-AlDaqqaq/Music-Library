@@ -1,5 +1,5 @@
 <h1>Create a new Account</h1>
-<form method="POST"action="/auth/signup">
+<form method="POST"action="/auth/signup"  enctype="multipart/form-data">
 
 
   <div>
@@ -19,7 +19,7 @@
   <br>
   <div>
     <label>Profile Picture</label>
-    <input type="string" name="profilePicture">
+    <input type="file" name='profilePicture' accept="image/*" required>
   </div>
   <br>
   <div>

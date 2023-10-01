@@ -52,11 +52,13 @@ app.use(function (req, res, next) {
 const indexRouter = require("./routes/index")
 const authRouter = require("./routes/auth")
 const musicRouter =require("./routes/music")
+const categoryRouter =require("./routes/category")
 
 // mount Routes
 app.use("/", indexRouter)
 app.use("/", authRouter)
 app.use("/", musicRouter)
+app.use("/", categoryRouter)
 
 
 // listen to requests on port

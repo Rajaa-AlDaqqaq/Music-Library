@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Category</title>
+</head>
+<body>
+  <form action="/category/add" method="POST">
+    <div>
+      <label>Category Name</label>
+      <input type="text" name="name">
+    </div>
+    <br>
+    <div>
+      <label>Description</label>
+      <input type="text" name="description">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label>Music</label>
+      <select name="music[]" multiple="multiple" id="music" class="form-control">
+        <% musics.forEach(function(music){ %>
+          <option value="<%= music._id %>"><%= music.name %></option>
+        <% }) %>
+      </select>
+    </div>
+    
+    <button type="submit"> Create Category </button>
+  </form>
+</body>
+</html>

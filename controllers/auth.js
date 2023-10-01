@@ -9,9 +9,12 @@ exports.auth_signup_get = (req, res) => {
 }
 
 exports.auth_signup_post = (req, res) => {
+  console.log(req.file.path)
+  console.log(req.body.password)
   let user = new User(req.body)
   let hash = bcrypt.hashSync(req.body.password, salt)
   user.password = hash
+  user.profilePicture= req.file.path
   console.log(hash)
   user
     .save()
@@ -54,9 +57,10 @@ exports.auth_edit_get = (req, res) => {
 }
 // user profile update post
 exports.auth_update_post = (req, res) => {
+  console.log(req.file.path)
   const userId = req.user._id
-  const { name, emailAddress, password, profilePicture, gender, dateOfBirth } =
-    req.body
+  const { name, emailAddress, password, gender, dateOfBirth } = req.body
+  const profilePicture = req.file.path
   User.findByIdAndUpdate(userId, {
     name,
     emailAddress,
