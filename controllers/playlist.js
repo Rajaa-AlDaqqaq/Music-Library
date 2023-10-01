@@ -24,9 +24,11 @@ exports.playlist_create_post = (req, res) => {
 }
 
 exports.playlist_index_get = (req, res) => {
-  Playlist.find()
-    .then((playlists) => {
-      res.render('playlist/index', { playlists })
+  const userId = req.user._id
+
+  Playlist.find({ user: userId })
+    .then((userPlaylist) => {
+      res.render('playlist/index', { userPlaylist })
     })
     .catch((err) => {
       console.log(err)
