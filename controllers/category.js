@@ -4,31 +4,33 @@ const moment = require('moment')
 
 
 exports.category_create_get = (req, res) => {
-  Music.find()
-  .then((musics) => {
-    res.render("category/add", {musics});
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-  }
+    res.render("category/add");
 
-  exports.category_create_post = async (req, res) => {
-    try {
-      console.log(req.body);
-      let category = new Category(req.body);
-      await category.save();
-      
-      for (const musicId of req.body.music) {
-        const music = await Music.findById(musicId);
-        music.category.push(category);
-        await music.save();
-      }
-      
-      res.send("hello");
-    } catch (err) {
-      console.log('Error:', err);
-      res.send("Please try again later!!!" , err);
-    }
+  }
+  exports.category_create_post = (req, res) => {
+    console.log(req.body);
+  
+    let category = new Category(req.body);
+  
+    category.save()
+    .then(() => {
+      res.redirect("/category/index")
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send("Please try again later!!!");
+    })
+  }
+  
+
+  exports.category_index_get=(req,res)=>{
+      Category.find()
+      .then( (categories) => {
+        res.render("category/index", {categories, moment})
+      })
+      .catch( (err) => {
+        console.log(err);
+      })
+    
   }
   

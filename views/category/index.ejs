@@ -1,0 +1,18 @@
+<h1> Categories </h1>
+
+<table class="table table-striped">
+  <tr>
+
+    <th>Name OF Category</th>
+    <th> Description</th>
+  </tr>
+
+  <% categories.forEach(function(category) { %>
+
+    <tr>
+      <td> <%= category.name %> </td>
+      <td> <%= category.description %> </td>
+    </tr>
+  <% }) %>
+
+</table>
