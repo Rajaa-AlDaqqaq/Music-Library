@@ -9,10 +9,13 @@ const mongoose = require("mongoose")
 // invoke express functionality
 const app = express()
 
+app.use(express.urlencoded({ extended: true }))
+
+
 // load express EJS layout
 app.use(express.static("public"))
 const expressLayouts = require("express-ejs-layouts")
-const bodyParser = require("body-parser")
+// const bodyParser = require("body-parser")
 
 
 // port configration
@@ -28,7 +31,7 @@ app.use(expressLayouts)
 let session = require("express-session")
 let passport = require("./helper/ppConfig")
 
-app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.urlencoded({ extended: false }))
 
 
 app.use(
@@ -52,11 +55,13 @@ app.use(function (req, res, next) {
 const indexRouter = require("./routes/index")
 const authRouter = require("./routes/auth")
 const musicRouter =require("./routes/music")
+const playlistRouter =require('./routes/playlist')
 
 // mount Routes
 app.use("/", indexRouter)
 app.use("/", authRouter)
 app.use("/", musicRouter)
+app.use("/", playlistRouter)
 
 
 // listen to requests on port

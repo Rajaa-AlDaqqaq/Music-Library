@@ -58,8 +58,9 @@ html, body{
 .user{
 color: #d21d96;
 -webkit-text-stroke: 0;
-
 }
+
+
 /* .form-content{
   size: 100px;
 } */
@@ -71,6 +72,8 @@ color: #d21d96;
   margin-left: 10%;
   align-content: center;
 }
+
+/* review */
 form{
   background-color: #2C343A;
   width: 37%;
@@ -89,15 +92,16 @@ form{
   align-items: center;
   text-align: left;
 }
-
+/* 
 button:hover {
   background-color:#ff0080; 
   color: white
 }
 .btn, .btn-primary{
   background-color:#FF10F0;
-  margin-left: 65%;
-}
+  /* margin-left: 65%;
+
+} */
 
 
 .cards{
