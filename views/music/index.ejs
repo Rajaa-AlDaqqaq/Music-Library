@@ -31,8 +31,7 @@
     <th>Audio</th>
     <th>Created At</th>
     <th>Updated At</th>
-    <th>Edit</th>
-    <th>Delete</th>
+
   </tr>
 
   <% musics.forEach(function(music) { %>  
@@ -50,8 +49,7 @@
       </td>
       <td><%= moment(music.createdAt).fromNow() %></td>
       <td><%= moment(music.updatedAt).fromNow() %></td>
-      <td> <a href="/music/edit?id=<%= music._id %>" class="btn btn-outline-secondary"> Edit </a> </td>
-      <td> <a href="/music/delete?id=<%= music._id %>" class="btn btn-outline-danger"> Delete </a> </td>
+      
     </tr>
 
   <% }) %>
