@@ -98,3 +98,27 @@ button:hover {
   background-color:#FF10F0;
   margin-left: 65%;
 }
+
+
+.cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.card{
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.card-body, .card-text{
+  text-decoration: none;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
