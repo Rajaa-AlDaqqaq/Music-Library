@@ -32,3 +32,27 @@ exports.playlist_index_get = (req, res) => {
       console.log(err)
     })
 }
+
+exports.playlist_edit_get = (req, res) => {
+  console.log(req.query.id)
+  Playlist.findById(req.query.id)
+    .then((playlist) => {
+      res.render('playlist/edit', { playlist })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+exports.playlist_update_post = (req, res) => {
+  console.log(req.body.id)
+  Playlist.findByIdAndUpdate(req.body.id, {
+    name: req.body.name
+  })
+    .then(() => {
+      res.redirect('/playlist/index')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
