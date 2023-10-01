@@ -60,6 +60,45 @@ color: #d21d96;
 -webkit-text-stroke: 0;
 
 }
+/* .form-content{
+  size: 100px;
+} */
+.signup-heading{
+  text-align: center;
+}
+.form-control{
+  border-color:#FF10F0;
+  margin-left: 10%;
+  align-content: center;
+}
+form{
+  background-color: #2C343A;
+  width: 37%;
+  height: fit-content;
+  margin: 2% 3%;
+  padding: 0.25%;
+  border-radius: 5%;
+}
+.form-text{
+  margin-left: 10%;
+  color: white;
+  font-size: large;
+}
+.form-content{
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+button:hover {
+  background-color:#ff0080; 
+  color: white
+}
+.btn, .btn-primary{
+  background-color:#FF10F0;
+  margin-left: 65%;
+}
+
 
 .cards{
   display: flex;
