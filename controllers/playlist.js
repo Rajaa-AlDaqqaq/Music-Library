@@ -58,3 +58,14 @@ exports.playlist_update_post = (req, res) => {
       console.log(err)
     })
 }
+
+exports.playlist_delete_get = (req, res) => {
+  console.log(req.query.id)
+  Playlist.findByIdAndDelete(req.query.id)
+    .then(() => {
+      res.redirect('/playlist/index')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
