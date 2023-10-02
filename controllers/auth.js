@@ -85,7 +85,7 @@ exports.auth_update_post = (req, res) => {
       res.redirect("/auth/detail")
     })
     .catch((err) => {
-      console.log( "did not enter one the fields or Uploaded pic ", err)
+      console.log( "did not enter one of the fields or Uploaded pic ", err)
     })
   
 }

@@ -1,40 +1,41 @@
+<link rel="stylesheet" href="/css/music.css">
+<body>
+<div class="content">
+<div>
+ <img src="<%= music.image.replace(/public/, '') %>" alt="<%= music.name %> Image" width="300" height="200">
+</div>
+<div>
 <h1> <%= music.name %> </h1>
-
 <div>
-  Author: <%= music.author %>
+<div>
+  <h2> <%= music.author %> </h2>
 </div>
 
 <div>
-  Description: <%= music.description %>
+    <%= music.description %>
 </div>
 
 <div>
-  Lyrics: <%= music.lyrics %>
-</div>
-
-<div>
-  Image: <img src="<%= music.image.replace(/public/, '') %>" alt="<%= music.name %> Image" width="300" height="200">
-</div>
-
-<div>
-  Audio: <audio controls>
+   <audio controls>
     <source src="<%= music.audio.replace(/public/, '') %>" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 </div>
+<div>
+  Lyrics: <%= music.lyrics %>
+</div>
 
-
-
+<!-- 
 <div>
   Created At: <%= moment(music.createdAt).fromNow() %>
 </div>
 
 <div>
   Updated At: <%= moment(music.updatedAt).fromNow() %>
+</div> -->
 </div>
-
-<br>
-
+<br><br>
+<div class="categories">
 <h2>Categories</h2>
 <ul>
   <% if (music.category && music.category.length > 0) { %>
@@ -46,6 +47,6 @@
   <% } else { %>
     <li>The music does not have any categories</li>
   <% } %>
-  
-  
 </ul>
+</div>
+<body>
