@@ -52,7 +52,7 @@ exports.music_index_get = (req, res) => {
   Music.find()
     .then((musics) => {
       Playlist.find({ user: userId }).then((userPlaylist) => {
-        console.log(musics)
+        // console.log(musics)
         res.render('music/index', { userPlaylist, musics, moment })
       })
     })
@@ -131,4 +131,75 @@ exports.music_myLibrary_get = (req, res) => {
     .catch((err) => {
       console.log(err)
     })
+}
+
+
+exports.music_addToPlaylist_get= (req, res) => {
+  Playlist.findById(req.query.id)
+    .then((playlist) => {
+      res.render('playlist/edit', { playlist })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+exports.music_addToPlaylist_put = (req, res) => {
+
+  Music.findById(req.body.id).then((music)=>{
+    Playlist.findById(req.body.playlistID).then((playlist)=>{
+      music.playlist.push(playlist)
+      playlist.music.push(music)
+
+      music.save()
+      playlist.save()
+
+      res.redirect('/playlist/index')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  })
+    .catch((err) => {
+      console.log(err)
+    })
+
+
+    // Music.findById(req.body.id).then((music)=>{
+    //   Playlist.findById(req.body.playlistID).then((playlist)=>{
+    //     music.playlist.push(playlist)
+    //     playlist.music.push(music)
+    //   })
+    // })
+    //   .then(() => {
+    //     res.redirect('/playlist/index')
+    //   })
+    //   .catch((err) => {
+    //     console.log(err)
+    //   })
+
+
+
+
+  // console.log(req.query.id)
+  // Music.findById(req.query.id)
+  // .then((ss)=>{
+  //   console.log(ss)
+  // })
+  // console.log()
+  // const musicId = req.music._id
+  // console.log(musicId)
+
+  // Playlist.findById(req.query.id)
+  //   .then((playlist) => {
+  //     Music.findById(musicId).then((music) => {
+  //       playlist.music.push(music)
+  //       console.log(playlist)
+  //       console.log(music)
+  //       res.render('playlist/detail', { playlist })
+  //     })
+  //   })
+  //   .catch((err) => {
+  //     console.log(err)
+  //   })
 }
