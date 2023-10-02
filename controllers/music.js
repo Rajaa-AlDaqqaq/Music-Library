@@ -48,10 +48,13 @@ exports.music_create_post = (req, res) => {
 }
 
 exports.music_index_get = (req, res) => {
+  const userId = req.user._id
   Music.find()
     .then((musics) => {
-      console.log(musics)
-      res.render('music/index', { musics, moment })
+      Playlist.find({ user: userId }).then((userPlaylist) => {
+        console.log(musics)
+        res.render('music/index', { userPlaylist, musics, moment })
+      })
     })
     .catch((err) => {
       console.log(err)
@@ -118,10 +121,12 @@ exports.music_update_post = (req, res) => {
 
 exports.music_myLibrary_get = (req, res) => {
   const userId = req.user._id
-
   Music.find({ user: userId })
     .then((userMusic) => {
-      res.render('music/myLibrary', { userMusic, moment })
+      // const userId = req.user._id
+      Playlist.find({ user: userId }).then((userPlaylist) => {
+        res.render('music/myLibrary', { userPlaylist, userMusic, moment })
+      })
     })
     .catch((err) => {
       console.log(err)

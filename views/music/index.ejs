@@ -21,10 +21,13 @@
       </a>
 
       <ul class="dropdown-menu">
+
+        <% userPlaylist.forEach(function(playlist) { %>  
+
+        <li><a class="dropdown-item" href="/auth/detail"><%= playlist.name %></a></li>
         
-        <li><a class="dropdown-item" href="/auth/detail">VIEW PROFILE</a></li>
-        <li><a class="dropdown-item" href="/auth/edit">EDIT PROFILE</a></li>
-        <li></li>
+
+        <% }) %>
 
       </ul>
     </div>
