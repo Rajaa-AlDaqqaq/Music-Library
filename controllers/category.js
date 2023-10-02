@@ -54,4 +54,30 @@ exports.category_create_get = (req, res) => {
     
   }
 
+
+  exports.category_update_get= (req,res)=>{
+    console.log(req.query.id)
+    category.findById(req.query.id).then((categories)=>{
+      res.render("category/edit",{categories})
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  exports.category_update_post =(req,res)=>{
+
+  }
+
+  exports.category_delete_get=(req,res)=>{
+    console.log(req.query.id)
+    Category.findByIdAndDelete(req.query.id)
+    .then(()=>{
+      console.log()
+      res.redirect("/category/index")
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
   

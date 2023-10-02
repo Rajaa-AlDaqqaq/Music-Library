@@ -64,7 +64,10 @@ exports.auth_update_post = (req, res) => {
   console.log(req.file.path)
   const userId = req.user._id
   const { name, emailAddress, password, gender, dateOfBirth } = req.body
-  const profilePicture  = req.file.path 
+  let profilePicture 
+  if(req.file.path){
+  profilePicture  = req.file.path
+  }
 
   let hashedPassword = password
   if (password) {
@@ -82,7 +85,7 @@ exports.auth_update_post = (req, res) => {
       res.redirect("/auth/detail")
     })
     .catch((err) => {
-      console.log(err)
+      console.log( "did not enter one the fields or Uploaded pic ", err)
     })
   
 }

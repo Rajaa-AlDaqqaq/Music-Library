@@ -2,9 +2,10 @@
 
 <table class="table table-striped">
   <tr>
-
     <th>Name OF Category</th>
-    <th> Description</th>
+    <th>Description</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 
   <% categories.forEach(function(category) { %>
@@ -12,6 +13,8 @@
     <tr>
       <td> <a href="/category/detail?id=<%= category._id %>"> <%= category.name %> </a></td>
       <td> <%= category.description %> </td>
+      <td> <a href="/category/edit?id=<%= category.id %>" >Edit</a></td>
+      <td> <a href="/category/delete?id=<%= category.id %>">Delete</a></td>
     </tr>
   <% }) %>
 

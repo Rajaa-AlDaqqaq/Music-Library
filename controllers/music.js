@@ -4,7 +4,7 @@ const moment = require('moment')
 
 
 exports.music_create_get = (req, res) => {
-  Category.find().populate('category')
+  Category.find()
   .then((categories)=>{
     res.render('music/add',{categories})
   })
