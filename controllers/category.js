@@ -57,8 +57,8 @@ exports.category_create_get = (req, res) => {
 
   exports.category_update_get= (req,res)=>{
     console.log(req.query.id)
-    category.findById(req.query.id).then((categories)=>{
-      res.render("category/edit",{categories})
+    Category.findById(req.query.id).then((category)=>{
+      res.render("category/edit",{category})
     })
     .catch((err)=>{
       console.log(err)
@@ -66,7 +66,16 @@ exports.category_create_get = (req, res) => {
   }
 
   exports.category_update_post =(req,res)=>{
-
+    
+    Category.findByIdAndUpdate(req.body.id, req.body)
+    .then(()=>
+    {
+      res.redirect("/category/index")
+    }).catch((err)=>{
+      res.send("Update Error", err)
+      console.log(err)
+    })
+    
   }
 
   exports.category_delete_get=(req,res)=>{
