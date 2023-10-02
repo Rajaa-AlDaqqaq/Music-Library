@@ -1,5 +1,7 @@
 const { Category } = require('../models/Category')
 const { Music } = require('../models/Music')
+const { Playlist } = require('../models/Playlist')
+
 const moment = require('moment')
 
 exports.music_create_get = (req, res) => {
