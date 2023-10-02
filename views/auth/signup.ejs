@@ -1,8 +1,9 @@
-<body>
+
+<h1>Create a new Account</h1>
   
 <div class="form-content">
 
-<form method="POST" action="/auth/signup">
+<form method="POST"action="/auth/signup"  enctype="multipart/form-data">
 <h1 class="signup-heading">Create a new Account</h1>
 
   <div class="col-md-7">
@@ -20,10 +21,11 @@
     <input type="password" name="password" class="form-control"/>
   </div>
   <br>
+
   <div class="col-md-7">
     <label class="form-text">Profile Picture</label>
-    <input type="file" name="profilePicture" accept="image/*"class="form-control"/>
-    
+    <input type="file" name='profilePicture' accept="image/*" class="form-control" required>
+
   </div>
   <br>
   <div class="col-md-7">
@@ -43,4 +45,3 @@
   <div><button type="submit" class="btn btn-primary">Sign Up</button></div>
 </form>
 </div>
-</body>

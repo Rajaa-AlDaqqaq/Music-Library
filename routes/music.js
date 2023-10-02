@@ -23,9 +23,7 @@ const musicCtrl = require('../controllers/music')
 
 // Routes
 router.get('/music/add', musicCtrl.music_create_get)
-router.post(
-  '/music/add',
-  upload.fields([{ name: 'audio' }, { name: 'image' }]),
+router.post('/music/add',upload.fields([{ name: 'audio' }, { name: 'image' }]),
   musicCtrl.music_create_post
 )
 router.get('/music/index', musicCtrl.music_index_get)

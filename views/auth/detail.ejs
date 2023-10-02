@@ -1,6 +1,8 @@
 <h1>Profile</h1>
 <p>Name: <%= user.name %></p>
 <p>Email Address: <%= user.emailAddress %></p>
-<img src="/uploads/<%= user.profilePicture %>" alt="Profile Picture">
+
+<img src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" width="300" height="200">
+
 <p>Gender: <%= user.gender %></p>
 <p>Date of Birth: <%= user.dateOfBirth %></p
