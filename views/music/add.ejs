@@ -7,38 +7,38 @@
 </head>
 <body>
   <form class="form-style" action="/music/add" method="POST" enctype="multipart/form-data">
-    <div class="col-md-7">
+    <div class="col-md-10">
       <label class="form-text">Music Name</label>
       <input type="text" name="name" class="form-control">
     </div>
     <br>
-    <div class="col-md-7">
+    <div class="col-md-10">
       <label class="form-text">Name of the author</label>
       <input type="text" name="author" class="form-control">
     </div>
     <br>
-    <div class="col-md-7">
+    <div class="col-md-10">
       <label class="form-text">Description</label>
       <input type="text" name="description" class="form-control"/>
     </div>
     <br>
-    <div class="col-md-7">
+    <div class="col-md-10">
       <label class="form-text">lyrics</label>
       <input type="text" name="lyrics" class="form-control">
     </div>
     <br>
-    <div class="col-md-7">
+    <div class="col-md-10">
       <label class="form-text">Audio</label>
       <input type="file" name="audio" accept="audio/*" required class="form-control">
     </div>
   
-    <div class="col-md-7">
+    <div class="col-md-10">
       <label class="form-text">Image</label>
       <input type="file" name="image" accept="image/*" required class="form-control">
     </div>
 
 
-    <div class="form-group col-md-7">
+    <div class="form-group col-md-10">
       <label class="form-text">Categories </label>
       <select name="categories[]" multiple="multiple" id="category" class="form-control">
         <% categories.forEach(function(category) { %>

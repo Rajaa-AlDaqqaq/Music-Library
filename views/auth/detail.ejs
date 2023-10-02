@@ -1,11 +1,34 @@
 <div class="detail-background">
 
-<h1>Profile</h1>
-<div>Name: <%= user.name %></div>
-<div>Email Address: <%= user.emailAddress %></div>
-<div>
-<img class="profile-Picture" src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" width="400" height="400" ></div>
 
-<div>Gender: <%= user.gender %></div>
-<div>Date of Birth: <%= user.dateOfBirth %></div>
+<form class="form-style user-detail">
+  <h1 class="form-heading">Profile</h1>
+
+<div class="col-md-10">
+  <label class="form-text" for="disabledTextInput" class="form-label">Name</label>
+  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.name %>">
+</div>
+
+
+<div class="col-md-10">
+  <label class="form-text" for="disabledTextInput" class="form-label">Name</label>
+  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.emailAddress %>">
+</div>
+
+
+<div class="col-md-10">
+  <label class="form-text" for="disabledTextInput" class="form-label">Gender</label>
+  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.gender %>"></div>
+
+  <div class="col-md-10">
+    <label class="form-text" for="disabledTextInput" class="form-label">Date of Birth</label>
+    <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.dateOfBirth %>">
+  </div>
+
+</form>
+
+<div class="pc-style">
+<img class="profile-Picture" src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" width="300" height="300" ></div>
+
+
 </div>
