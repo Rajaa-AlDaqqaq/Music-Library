@@ -5,8 +5,11 @@ const { Playlist } = require('../models/Playlist')
 const moment = require('moment')
 
 exports.music_create_get = (req, res) => {
-  Category.find().then((categories) => {
-    res.render('music/add', { categories })
+
+  Category.find()
+  .then((categories)=>{
+    res.render('music/add',{categories})
+
   })
 }
 
