@@ -1,4 +1,5 @@
 const { Playlist } = require('../models/Playlist.js')
+const { Music } = require('../models/Music.js')
 
 exports.playlist_create_get = (req, res) => {
   res.render('playlist/add')
@@ -71,8 +72,9 @@ exports.playlist_delete_get = (req, res) => {
 }
 
 exports.playlist_show_get = (req, res) => {
-  console.log(req.query.id)
+  // console.log(req.query.id)
   Playlist.findById(req.query.id)
+    .populate('music')
     .then((playlist) => {
       res.render('playlist/detail', { playlist })
     })
