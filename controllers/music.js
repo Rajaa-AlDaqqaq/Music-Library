@@ -148,6 +148,7 @@ exports.music_addToPlaylist_put = (req, res) => {
 
   Music.findById(req.body.id).then((music)=>{
     Playlist.findById(req.body.playlistID).then((playlist)=>{
+      
       music.playlist.push(playlist)
       playlist.music.push(music)
 
