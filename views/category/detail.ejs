@@ -1,15 +1,14 @@
 <h1><%= category.name %></h1>
 <p>Description: <%= category.description %></p>
-
-<h2>Categories Music</h2>
+<h2>Music</h2>
 <ul>
-  <% if (category.musics && category.musics.length > 0) { %>
-    <% category.musics.forEach(function (music) { %>
+  <% if (category.music && category.music.length > 0) { %>
+    <% category.music.forEach(function (music) { %>
       <li>
         <div>Music Name: <%= music.name %></div>
         <div>Singer: <%= music.author %></div>
       </li>
-    <% }) %>
+    <% }); %>
   <% } else { %>
     <li>No music found for this category.</li>
   <% } %>

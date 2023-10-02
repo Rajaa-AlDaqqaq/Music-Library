@@ -4,7 +4,7 @@ const moment = require('moment')
 
 
 exports.music_create_get = (req, res) => {
-  Category.find()
+  Category.find().populate('category')
   .then((categories)=>{
     res.render('music/add',{categories})
   })
@@ -31,18 +31,21 @@ exports.music_create_post = (req, res) => {
       req.body.categories.forEach(category => {
         Category.findById(category)
         .then((category) => {
-          category.music.push(music);
-          category.save();
+          
+          category.music.push(music)
+          music.category.push(category)
+          category.save()
+          music.save()
         })
         .catch((err) => {
           console.log(err)
         })
       })
-      res.redirect('/music/index')
+      res.redirect('/music/index') 
     })
     .catch((err) => {
       console.error(err)
-      res.send('Please try again later.')
+      res.send('Please try again later.', err)
     })
 }
 
@@ -58,10 +61,11 @@ exports.music_index_get = (req, res) => {
     })
 }
 
+
+//show details of music
 exports.music_show_get = (req, res) => {
   console.log(req.query.id)
-  Music.findById(req.query.id)
-    // .populate('category')
+  Music.findById(req.query.id).populate('category')
     .then((music) => {
       res.render('music/detail', { music, moment })
     })
@@ -69,7 +73,6 @@ exports.music_show_get = (req, res) => {
       console.log(err)
     })
 }
-
 exports.music_delete_get = (req, res) => {
   console.log(req.query.id)
   Music.findByIdAndDelete(req.query.id)

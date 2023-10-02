@@ -4,7 +4,6 @@ const moment = require('moment')
 
 
 exports.category_create_get = (req, res) => {
-  
   Music.find()
   .then((musics)=>{
     res.render('category/add',{musics})
@@ -28,17 +27,20 @@ exports.category_create_get = (req, res) => {
 
   //show category details
   exports.category_details_get = (req, res) => {
+    console.log(req.query.id)
     Category
-    .findById(req.query.id)
-    .populate('music')
-    .then((category) => {
-      res.render("category/detail", { category, moment });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  
+      .findById(req.query.id)
+      .populate('music')
+      .then((category) => {
+        console.log(category)
+        res.render("category/detail", { category, moment })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+  
+  
   
 
   exports.category_index_get=(req,res)=>{
@@ -51,7 +53,5 @@ exports.category_create_get = (req, res) => {
       })
     
   }
-
-// shhow category details
 
   
