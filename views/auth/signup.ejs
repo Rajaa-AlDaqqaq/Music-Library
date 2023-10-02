@@ -1,47 +1,45 @@
-
-<h1>Create a new Account</h1>
   
 <div class="form-content">
 
-<form method="POST"action="/auth/signup"  enctype="multipart/form-data">
-<h1 class="signup-heading">Create a new Account</h1>
-
-  <div class="col-md-7">
-    <label class="form-text">Name</label>
-    <input type="text" name="name" class="form-control"/>
-  </div>
-  <br>
-  <div class="col-md-7">
-    <label class="form-text">Email Address</label>
-    <input type="email" name="emailAddress" class="form-control"/>
-  </div>
-  <br>
-  <div class="col-md-7">
-    <label class="form-text">Password</label>
-    <input type="password" name="password" class="form-control"/>
-  </div>
-  <br>
-
-  <div class="col-md-7">
-    <label class="form-text">Profile Picture</label>
-    <input type="file" name='profilePicture' accept="image/*" class="form-control" required>
-
-  </div>
-  <br>
-  <div class="col-md-7">
-    <label class="form-text">gender</label>
+  <form class="form-style" method="POST"action="/auth/signup"  enctype="multipart/form-data">
+  <h1 class="signup-heading">Create a new Account</h1>
+  
+    <div class="col-md-7">
+      <label class="form-text">Name</label>
+      <input type="text" name="name" class="form-control"/>
+    </div>
     <br>
-      <input type="radio" name="gender" id="male" value="Male" class="form-text">
-      <label for="male" class="form-text">Male</label>
+    <div class="col-md-7">
+      <label class="form-text">Email Address</label>
+      <input type="email" name="emailAddress" class="form-control"/>
+    </div>
+    <br>
+    <div class="col-md-7">
+      <label class="form-text">Password</label>
+      <input type="password" name="password" class="form-control"/>
+    </div>
+    <br>
+  
+    <div class="col-md-7">
+      <label class="form-text">Profile Picture</label>
+      <input type="file" name='profilePicture' accept="image/*" class="form-control" required>
+  
+    </div>
+    <br>
+    <div class="col-md-7">
+      <label class="form-text">gender</label>
       <br>
-      <input type="radio" name="gender" id="female" value="Female" class="form-text">
-      <label for="female" class="form-text">Female</label>
+        <input type="radio" name="gender" id="male" value="Male" class="form-text">
+        <label for="male" class="form-text">Male</label>
+        <br>
+        <input type="radio" name="gender" id="female" value="Female" class="form-text">
+        <label for="female" class="form-text">Female</label>
+    </div>
+    <br>
+    <div class="col-md-7">
+      <label class="form-text">Date Of Birth</label>
+      <input type="date" name="dateOfBirth" class="form-control"/>
+    </div>
+    <div><button type="submit" class="btn btn-primary button-style">Sign Up</button></div>
+  </form>
   </div>
-  <br>
-  <div class="col-md-7">
-    <label class="form-text">Date Of Birth</label>
-    <input type="date" name="dateOfBirth" class="form-control"/>
-  </div>
-  <div><button type="submit" class="btn btn-primary">Sign Up</button></div>
-</form>
-</div>

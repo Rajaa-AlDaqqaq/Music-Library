@@ -74,7 +74,7 @@ color: #d21d96;
 }
 
 /* review */
-form{
+.form-style{
   background-color: #2C343A;
   width: 37%;
   height: fit-content;
@@ -92,16 +92,6 @@ form{
   align-items: center;
   text-align: left;
 }
-/* 
-button:hover {
-  background-color:#ff0080; 
-  color: white
-}
-.btn, .btn-primary{
-  background-color:#FF10F0;
-  /* margin-left: 65%;
-
-} */
 
 
 .cards{
@@ -125,4 +115,23 @@ button:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.button-style:hover {
+  background-color:#ff0080; 
+  color: white
+}
+.button-style{
+  background-color:#FF10F0;
+  margin-left: 65%;
+} 
+.profile-Picture{
+  color: transparent;
+  transition: all .3s ease;
+  position: relative;
+  transition: all .3s ease;
+  border-radius: 50%;
+}
+.detail-background{
+  background-image: url("/background/bg2.jpg");
+  background-size: cover;
 }

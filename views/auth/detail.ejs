@@ -1,8 +1,11 @@
+<div class="detail-background">
+
 <h1>Profile</h1>
-<p>Name: <%= user.name %></p>
-<p>Email Address: <%= user.emailAddress %></p>
+<div>Name: <%= user.name %></div>
+<div>Email Address: <%= user.emailAddress %></div>
+<div>
+<img class="profile-Picture" src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" width="400" height="400" ></div>
 
-<img src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" width="300" height="200">
-
-<p>Gender: <%= user.gender %></p>
-<p>Date of Birth: <%= user.dateOfBirth %></p
+<div>Gender: <%= user.gender %></div>
+<div>Date of Birth: <%= user.dateOfBirth %></div>
+</div>
