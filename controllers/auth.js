@@ -1,13 +1,16 @@
 const User = require("../models/User")
 const bcrypt = require("bcrypt")
 const passport = require("passport")
+const multer = require("multer")
 
+// hashing that bcrypt
 const salt = 10
 
+// signup get
 exports.auth_signup_get = (req, res) => {
   res.render("auth/signup")
 }
-
+//  signup post
 exports.auth_signup_post = (req, res) => {
   console.log(req.file.path)
   console.log(req.body.password)
@@ -25,7 +28,7 @@ exports.auth_signup_post = (req, res) => {
       console.log(err)
     })
 }
-
+// signin get
 exports.auth_signin_get = (req, res) => {
   res.render("auth/signin")
 }
@@ -34,7 +37,7 @@ exports.auth_signin_post = passport.authenticate("local", {
   successRedirect: "/",
   failureRedirect: "/auth/signin",
 })
-
+// logout get
 exports.auth_logout_get = (req, res) => {
   req.logout(function (err) {
     if (err) {
@@ -55,6 +58,7 @@ exports.auth_edit_get = (req, res) => {
       console.log(err)
     })
 }
+
 // user profile update post
 exports.auth_update_post = (req, res) => {
   console.log(req.file.path)
@@ -80,6 +84,7 @@ exports.auth_update_post = (req, res) => {
     .catch((err) => {
       console.log(err)
     })
+  
 }
 // show detail
 exports.auth_show_get = async (req, res) => {
@@ -91,3 +96,4 @@ exports.auth_show_get = async (req, res) => {
     res.redirect("/")
   }
 }
+// profile picture upload

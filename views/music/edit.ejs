@@ -1,0 +1,45 @@
+<h1>Edit Music</h1>
+
+<form method="POST" action="/music/update?_method=PUT" enctype="multipart/form-data">
+
+  <input type="hidden" name="id" value="<%= music._id %>">
+
+
+  <div>
+    <label>Music Name</label>
+    <input type="text" name="name" value="<%= music.name  %>">
+  </div>
+  <br>
+  <div>
+    <label>Name of the author</label>
+    <input type="text" name="author" value="<%= music.author  %>" >
+  </div>
+  <br>
+  <div>
+    <label>Description</label>
+    <input type="text" name="description"  value="<%=  music.description %>" />
+  </div>
+  <br>
+  <div>
+    <label>lyrics</label>
+    <input type="text" name="lyrics" value="<%= music.lyrics  %>" >
+  </div>
+  <br>
+  <div>
+    <label>Audio</label>
+    <audio controls>
+      <source src="<%= music.audio.replace(/public/, '') %>" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <input type="file" name="audio" accept="audio/*"  required>
+  </div>
+
+  <div>
+    <label>Image</label>
+    Image: <img src="<%= music.image.replace(/public/, '') %>" alt="<%= music.name %> Image" width="300" height="200">
+    <input type="file" name="image" accept="image/*"  required>
+  </div>
+<br>
+  <button type="submit"> Update Music </button>
+
+</form>

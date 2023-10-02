@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Create your own music</title>
+  <title>Add Music</title>
+
 </head>
 <body>
   <form action="/music/add" method="POST" enctype="multipart/form-data">
@@ -36,6 +37,7 @@
       <input type="file" name="image" accept="image/*" required>
     </div>
 
+
     <div class="form-group">
       <label>Categories </label>
       <select name="categories[]" multiple="multiple" id="category" class="form-control">
@@ -48,6 +50,11 @@
     
   </div>
   
+
+
+    
+    <input type="hidden" name="id" value="<%= currentUser._id %>">
+
   
     <button type="submit"> Add Music </button>
   </form>

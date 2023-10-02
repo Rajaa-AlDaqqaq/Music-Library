@@ -1,0 +1,10 @@
+<h1>Edit Playlists</h1>
+<form method="POST" action="/playlist/update?_method=PUT">
+<div>
+  <label>Playlist Name</label>
+  <input type="text" name="name" value="<%= playlist.name  %>" />
+  <input type="hidden" name="id" value="<%= playlist._id %>">
+
+</div>
+<button type="submit"> Update Playlist </button>
+</form>

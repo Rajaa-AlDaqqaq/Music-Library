@@ -23,6 +23,7 @@
         </a>
 
         <ul class="dropdown-menu">
+          
           <li><a class="dropdown-item" href="/auth/detail">VIEW PROFILE</a></li>
           <li><a class="dropdown-item" href="/auth/edit">EDIT PROFILE</a></li>
           <li></li>
@@ -32,7 +33,23 @@
       
       <a href="/music/myLibrary" class="navLink">MY LIBRARY</a>
       <a href="/category/index" class="navLink">CATEGORIES</a>
-      <a href="/playlist/index" class="navLink">PLAYLISTS</a>
+
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link" href="/playlist/index" class="navLink">
+          PLAYLISTS
+        </a>
+
+        <ul class="dropdown-menu">
+          
+          <li><a class="dropdown-item" href="/playlist/index">VIEW PLAYLISTS</a></li>
+          <li><a class="dropdown-item" href="/playlist/add">CREATE PLAYLIST</a></li>
+          <li></li>
+
+        </ul>
+      </div>
+
+
+
       <a href="/music/add" class="navLink">ADD MUSIC</a>
       <a href="/auth/logout" class="navLink">LOG OUT</a>
       
@@ -45,7 +62,6 @@
 
 </header>
   <body>
-    <!-- <BR><BR> -->
 
   <%- body %>
 
