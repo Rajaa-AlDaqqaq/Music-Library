@@ -2,11 +2,9 @@ const { Category } = require('../models/Category')
 const { Music } = require('../models/Music')
 const moment = require('moment')
 
-
 exports.music_create_get = (req, res) => {
-  Category.find().populate('category')
-  .then((categories)=>{
-    res.render('music/add',{categories})
+  Category.find().then((categories) => {
+    res.render('music/add', { categories })
   })
 }
 
@@ -27,28 +25,25 @@ exports.music_create_post = (req, res) => {
   music
     .save()
     .then(() => {
-  
-      req.body.categories.forEach(category => {
+      req.body.categories.forEach((category) => {
         Category.findById(category)
-        .then((category) => {
-          
-          category.music.push(music)
-          music.category.push(category)
-          category.save()
-          music.save()
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+          .then((category) => {
+            category.music.push(music)
+            music.category.push(category)
+            category.save()
+            music.save()
+          })
+          .catch((err) => {
+            console.log(err)
+          })
       })
-      res.redirect('/music/index') 
+      res.redirect('/music/index')
     })
     .catch((err) => {
       console.error(err)
       res.send('Please try again later.', err)
     })
 }
-
 
 exports.music_index_get = (req, res) => {
   Music.find()
@@ -61,11 +56,11 @@ exports.music_index_get = (req, res) => {
     })
 }
 
-
 //show details of music
 exports.music_show_get = (req, res) => {
   console.log(req.query.id)
-  Music.findById(req.query.id).populate('category')
+  Music.findById(req.query.id)
+    .populate('category')
     .then((music) => {
       res.render('music/detail', { music, moment })
     })
@@ -99,9 +94,8 @@ exports.music_update_post = (req, res) => {
   console.log(req.body.id)
   console.log('File Uploads - Audio Path: ', req.files.audio[0].path)
   console.log('File Uploads - Image Path: ', req.files.image[0].path)
-  console.log('Request Body:', req.body);
-console.log('Uploaded Files:', req.files);
-
+  console.log('Request Body:', req.body)
+  console.log('Uploaded Files:', req.files)
 
   Music.findByIdAndUpdate(req.body.id, {
     name: req.body.name,
@@ -120,16 +114,14 @@ console.log('Uploaded Files:', req.files);
     })
 }
 
-
 exports.music_myLibrary_get = (req, res) => {
-
-  const userId = req.user._id;
+  const userId = req.user._id
 
   Music.find({ user: userId })
     .then((userMusic) => {
-      res.render('music/myLibrary', { userMusic, moment });
+      res.render('music/myLibrary', { userMusic, moment })
     })
     .catch((err) => {
-      console.log(err);
-    });
+      console.log(err)
+    })
 }
