@@ -19,14 +19,22 @@
       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">
         Add to playlist
       </a>
-
+      <form action="/music/addToPlaylist?_method=PUT" method="post">
       <ul class="dropdown-menu">
-        
-        <li><a class="dropdown-item" href="/auth/detail">VIEW PROFILE</a></li>
-        <li><a class="dropdown-item" href="/auth/edit">EDIT PROFILE</a></li>
-        <li></li>
+        <input type="hidden" name="id" value="<%= music._id %>">
+        <% userPlaylist.forEach(function(playlist) { %>  
 
+        <li>
+          <input type="radio" name="playlistID"  value="<%= playlist._id %>">
+          
+          <label><%= playlist.name %></label>
+          
+        </li>
+        
+        <% }) %>
+          <li><button type="submit">Add to Playlists</button></li>
       </ul>
+    </form>
     </div>
 
   </div>

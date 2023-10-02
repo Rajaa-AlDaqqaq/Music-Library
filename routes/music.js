@@ -36,6 +36,7 @@ router.put(
   upload.fields([{ name: 'audio' }, { name: 'image' }]),
   musicCtrl.music_update_post
 )
+router.put('/music/addToPlaylist', musicCtrl.music_addToPlaylist_put)
 
 // export
 module.exports = router
