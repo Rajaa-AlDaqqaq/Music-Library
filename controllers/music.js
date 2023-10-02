@@ -42,7 +42,7 @@ exports.music_create_post = (req, res) => {
     })
     .catch((err) => {
       console.error(err)
-      res.send('Please try again later.')
+      res.send('Please try again later.', err)
     })
 }
 
