@@ -1,6 +1,5 @@
 <h1><%= category.name %></h1>
 <p>Description: <%= category.description %></p>
-
 <h2>Music</h2>
 <ul>
   <% if (category.music && category.music.length > 0) { %>
@@ -9,7 +8,7 @@
         <div>Music Name: <%= music.name %></div>
         <div>Singer: <%= music.author %></div>
       </li>
-    <% }) %>
+    <% }); %>
   <% } else { %>
     <li>No music found for this category.</li>
   <% } %>

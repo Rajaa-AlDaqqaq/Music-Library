@@ -36,3 +36,16 @@
 <br>
 
 <h2>Categories</h2>
+<ul>
+  <% if (music.category && music.category.length > 0) { %>
+    <% music.category.forEach(function (category) { %>
+      <li>
+        <div>Category Name: <%= category.name %></div>
+      </li>
+    <% }) %>
+  <% } else { %>
+    <li>The music does not have any categories</li>
+  <% } %>
+  
+  
+</ul>
