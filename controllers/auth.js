@@ -60,15 +60,20 @@ exports.auth_update_post = (req, res) => {
   console.log(req.file.path)
   const userId = req.user._id
   const { name, emailAddress, password, gender, dateOfBirth } = req.body
-  const profilePicture = req.file.path
-  User.findByIdAndUpdate(userId, {
+  const profilePicture  = req.file.path 
+
+  let hashedPassword = password
+  if (password) {
+    hashedPassword = bcrypt.hashSync(password, salt)
+  }
+   User.findByIdAndUpdate(userId, { $set: {
     name,
     emailAddress,
-    password,
+    password:hashedPassword,
     profilePicture,
     gender,
     dateOfBirth,
-  })
+  }})
     .then(() => {
       res.redirect("/auth/detail")
     })

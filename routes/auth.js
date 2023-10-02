@@ -20,8 +20,8 @@ router.post("/auth/signup",upload.single('profilePicture'), authCtrl.auth_signup
 router.get("/auth/signin", authCtrl.auth_signin_get)
 router.post("/auth/signin", authCtrl.auth_signin_post)
 router.get("/auth/logout", authCtrl.auth_logout_get)
-router.get("/auth/edit", upload.single('profilePicture'), isLoggedIn, authCtrl.auth_edit_get)
-router.post("/auth/update", isLoggedIn, authCtrl.auth_update_post)
+router.get("/auth/edit",  isLoggedIn, authCtrl.auth_edit_get)
+router.post("/auth/update",upload.single('profilePicture'), isLoggedIn, authCtrl.auth_update_post)
 router.get("/auth/detail", isLoggedIn, authCtrl.auth_show_get)
 
 // export

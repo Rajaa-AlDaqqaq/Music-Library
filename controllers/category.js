@@ -4,22 +4,40 @@ const moment = require('moment')
 
 
 exports.category_create_get = (req, res) => {
-    res.render("category/add");
+  
+  Music.find()
+  .then((musics)=>{
+    res.render('category/add',{musics})
+  })
 
   }
   exports.category_create_post = (req, res) => {
-    console.log(req.body);
-  
-    let category = new Category(req.body);
-  
+    console.log(req.body)
+    let category=new Category(req.body)
     category.save()
-    .then(() => {
+    .then(()=>{
       res.redirect("/category/index")
+  
+    })
+    .catch((err)=>{
+      console.log(err)
+      res.send("Please try again!!");
+    })
+
+  }
+
+  //show category details
+  exports.category_details_get = (req, res) => {
+    Category
+    .findById(req.query.id)
+    .populate('music')
+    .then((category) => {
+      res.render("category/detail", { category, moment });
     })
     .catch((err) => {
       console.log(err);
-      res.send("Please try again later!!!");
-    })
+    });
+  
   }
   
 
@@ -33,4 +51,7 @@ exports.category_create_get = (req, res) => {
       })
     
   }
+
+// shhow category details
+
   

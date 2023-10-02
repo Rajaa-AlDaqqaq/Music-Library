@@ -1,14 +1,19 @@
+const { Category } = require('../models/Category')
 const { Music } = require('../models/Music')
 const moment = require('moment')
 
+
 exports.music_create_get = (req, res) => {
-  res.render('music/add')
+  Category.find()
+  .then((categories)=>{
+    res.render('music/add',{categories})
+  })
 }
 
 exports.music_create_post = (req, res) => {
   console.log('File Uploads - Audio Path: ', req.files.audio[0].path)
   console.log('File Uploads - Image Path: ', req.files.image[0].path)
-  // Create and Save a new Music document using Mongoose
+
   const music = new Music({
     name: req.body.name,
     author: req.body.author,
@@ -17,17 +22,31 @@ exports.music_create_post = (req, res) => {
     image: req.files.image[0].path,
     audio: req.files.audio[0].path
   })
-
+  console.log(req.body.categories)
   music
     .save()
     .then(() => {
-      res.send('Music added successfully!')
+  
+      req.body.categories.forEach(category => {
+        Category.findById(category)
+        .then((category) => {
+          category.music.push(music);
+          category.save();
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+      })
+      res.send("hello");
     })
     .catch((err) => {
       console.error(err)
       res.send('Please try again later.')
     })
 }
+
+
+
 
 exports.music_showmusic_get = (req, res) => {
   Music.find()
