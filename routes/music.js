@@ -31,6 +31,7 @@ router.get('/music/myLibrary', musicCtrl.music_myLibrary_get)
 router.get('/music/detail', musicCtrl.music_show_get)
 router.get('/music/delete', musicCtrl.music_delete_get)
 router.get('/music/edit', musicCtrl.music_edit_get)
+router.get('/music/list', musicCtrl.music_list_get)
 router.put(
   '/music/update',
   upload.fields([{ name: 'audio' }, { name: 'image' }]),

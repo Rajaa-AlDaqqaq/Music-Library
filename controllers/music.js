@@ -12,6 +12,18 @@ exports.music_create_get = (req, res) => {
 
   })
 }
+exports.music_list_get = async (req, res) => {
+  try {
+    const musics = await Music.find({})
+    const formattedMusics = JSON.stringify(musics, null, 2)
+    res.end(formattedMusics)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'An error occurred' })
+  }
+}
+
+
 
 exports.music_create_post = (req, res) => {
   console.log('File Uploads - Audio Path: ', req.files.audio[0].path)
@@ -167,3 +179,6 @@ exports.music_addToPlaylist_put = (req, res) => {
       console.log(err)
     })
 }
+
+
+

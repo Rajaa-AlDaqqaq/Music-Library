@@ -14,12 +14,8 @@ const musicSchema = mongoose.Schema(
         ref: 'Category'
       }
     ],
-    playlist: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Playlist'
-      }
-    ],
+
+    
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'

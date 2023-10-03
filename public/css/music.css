@@ -1,35 +1,180 @@
-.content{
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Roboto&display=swap');
+
+.musicplayer{
 font-size: small;
 font-style: italic;
 backdrop-filter: blur(20px);
 position: relative;
 text-align: center;
 margin: 50px;
+font-family: 'roboto', sans-serif ;
 }
 
+.musicplayer{
+  width:350px;
+  height: 550px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 40px, 100px rgba(255,255,255,0.1) ;
 
-audio::-webkit-media-controls-panel {
-  background-color: #56AEFF;
+
 }
-audio::-webkit-media-controls-mute-button {
-  background-color: #B1D4E0;
+
+.music-name,.artist-name{
+text-align: center;
+text-transform: capitalize;
+}
+
+.music-name{
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.artist-name{
+  font-size: 20px;  
+}
+
+.disk {
+  background-color: black;
+  position: relative;
+  display: block;
+  margin: 40px auto;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
+  object-fit: cover;
+  background-size:cover;
+  background-image: url('');
+  box-shadow: 0 0 0 10px rgba(255,255,255, 0.08);
+  animation: rotate 20s linear infinite;
+
 }
-audio::-webkit-media-controls-current-time-display {
-  color: #fff;
+
+.disk.play{
+  animation-play-state: running ;
 }
-audio::-webkit-media-controls-timeline {
-  background-color: #B1D4E0;
-  border-radius: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
+
+.song-slider{
+  width: 100%;
+  position: relative;
+
 }
-audio::-webkit-media-controls-time-remaining-display {
-  color: #fff;
+.seekbar{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: yellow;
+  cursor: pointer;
 }
-audio::-webkit-media-controls-volume-slider {
-  background-color: #B1D4E0;
-  border-radius: 25px;
-  padding-left: 8px;
-  padding-right: 8px;
+.seekbar::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 10px;
+  height: 20px;
+  background: black;
+  box-shadow: -400px 0 0 400px green;
+
+}
+
+.current,.after{
+
+  font-size: 14px;
+}
+.after{
+position: absolute;
+right: 3%;
+top:60%
+}
+.current{
+  position: absolute;
+  left: 3%;
+  top:60% 
+}
+
+.controls{
+  width:60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;  
+}
+
+.play-btn{
+  position: relative;
+  width:60px;
+  height: 60px;
+  border-radius:50%;
+  background: white;
+  cursor: pointer;
+  border: none;
+}
+.play-btn span{
+position: absolute;
+top:50%;
+left: 25%;
+transform: translateY(-50%);
+width: 10px;
+height: 30px;
+border-radius: 2px;
+transition: .5s;
+background: yellow;
+clip-path: polygon(0 0, 100% 100%, 0% 100%);
+}
+
+
+.play-btn span:nth-child(2){
+  left:55%;
+  transform-origin:center;
+}
+
+.play-btn.pause span:nth-child(2){
+  transform: translateY(-50%) scaleY(0);
+}
+
+
+.play-btn.pause span:nth-child(1){
+width: 35%;
+left:53%;
+transform: translate(-50%,-50%);
+border-radius: 0;
+clip-path: polygon(0 0,100% 50% , 100% 50%, 0% 100%);
+
+}
+
+
+@keyframes pulse{
+  0%{
+    box-shadow: 0;
+  }
+  50%{
+    box-shadow: 0 0 0 5px rgba(255,255,255, 0.1);
+  }
+  100%{
+    box-shadow: rgba(255,255,255, 0.4);
+  }
+}
+
+.btn{
+  width: 40px;
+  height: 40px;
+  background: wheat;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
