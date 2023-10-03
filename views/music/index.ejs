@@ -5,17 +5,19 @@
   
 
   <div class="cards">
+    
     <% musics.forEach(function(music) { %>  
       
       <div class="card" style="width: 18rem;">
-  <img src="<%= music.image.replace(/public/, '') %>" class="card-img-top cardImg" alt="<%= music.name %> Image">
+        
+      <img src="<%= music.image.replace(/public/, '') %>" class="card-img-top exploreimg cardImg" alt="<%= music.name %> Image">
   <div class="card-body">
-    <h5 class="card-title"><a href="/music/detail?id=<%= music._id %>" class="musicname"><%= music.name %></a></h5>
-    <!-- <a href="/music/detail?id=<%= music._id %>" class="btn btn-primary">Play</a> -->
+    <h5 class="card-title"><a href="/music/detail?id=<%= music._id %>" class="musicname "><%= music.name %></a></h5>
+
     
     <div class="dropdown dropdown1" >
       <a class="btn btn-secondary dropdown-toggle dropdown2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link" >
-        <img src="/background/add-to-playlist-w.png" alt="" width="100%">
+        <img src="/background/add-to-playlist-w.png" alt="" width="100%"  >
       </a>
       <form action="/music/detail?_method=PUT" method="post">
         <ul class="dropdown-menu">
@@ -36,6 +38,7 @@
       </div>
 
     </div>
+  <!-- </a> -->
   </div>
   
   <% }) %>
