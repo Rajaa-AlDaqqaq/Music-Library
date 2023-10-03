@@ -15,6 +15,12 @@ const musicSchema = mongoose.Schema(
       }
     ],
 
+    playlist: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Playlist'
+      }
+    ],
     
     user: {
       type: mongoose.Schema.Types.ObjectId,
