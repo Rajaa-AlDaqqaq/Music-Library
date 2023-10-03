@@ -37,6 +37,7 @@ router.put(
   musicCtrl.music_update_post
 )
 router.put('/music/detail', musicCtrl.music_addToPlaylist_put)
+router.put('/music/remove', musicCtrl.music_removeFromPlaylist_put)
 
 // export
 module.exports = router

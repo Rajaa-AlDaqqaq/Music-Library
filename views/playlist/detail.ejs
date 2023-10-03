@@ -1,10 +1,19 @@
-<h1> <%= playlist.name %> </h1>
+
+<h1> <%= playlist.name %> </h1>    
+<% playlist.music.forEach(function(music) { %>
+<form method="POST" action="/music/remove?_method=PUT" >
+<input type="hidden" name="playlistID"  value="<%= playlist._id %>">
 
 <ul>
-    <% playlist.music.forEach(function(music) { %>
     <li> <a href="/music/detail?id=<%= music._id %>">
       <%= music.name %>
     </a> 
+    <input type="hidden" name="id" value="<%= music._id %>">
+
+
+    <button class="btn btn-outline-danger" type="submit"> Remove from playlist </button>
     </li>
-    <% }) %>
-</ul>
+    
+</ul>  
+</form>
+<% }) %>
