@@ -139,21 +139,22 @@ color: #d21d96;
   color: transparent;
   /* margin-top:60%; */
   position: relative;
-  border-radius: 100%;
-  width:50vh;
-  max-width: 60vh;
-  height:40vh;
-
+  border-radius: 50%;
+  width:300px;
+  /* max-width: 60vh; */
+  height:250px;
+  margin-top: 30%;
+  margin-left: 10%;
 }
 .main-background{
   background-image: url("/background/bg.png");
   background-size: cover;
   
 }
-.user-detail{
+/* .user-detail{ */
   /* align-content:flex-end; */
   /* margin: 12%; */
-}
+/* } */
 .detail-box{
   display: flex;
   flex-direction: row-reverse;
@@ -167,6 +168,9 @@ color: #d21d96;
   border: 5px;
   margin: auto;
   padding: 20px;  
+  
+}
+.mid-style{
   justify-content: center;
-  align-content: center;
+  
 }
