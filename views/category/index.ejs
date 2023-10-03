@@ -1,7 +1,7 @@
 <div class="categories">
   <h1> Categories </h1>
 </div>
-
+<!-- 
 <table class="table table-striped">
   <tr>
     <th>Name OF Category</th>
@@ -20,4 +20,33 @@
     </tr>
   <% }) %>
 
-</table>
+</table> -->
+
+
+<div class="cards ">
+  <% categories.forEach(function(category) { %>  
+    <div class="card category-card" style="width: 18rem;">
+      <a href="/category/detail?id=<%= category._id %>" class="playlist-name">
+
+      <img src="/background/category-w.png" class="card-img-top category-img" alt="<%= category.name %> Image">
+    <div class="card-body playlist-card">
+        <h5 class="card-title" >
+          <%= category.name %>
+        </h5>  
+        
+        <div class="edit-delete-music">
+          <div class="edit">
+            <a href="/category/edit?id=<%= category.id %>" class="btn btn-outline-secondary">Edit</a>
+          </div>
+          <div class="delete">
+            <a href="/category/delete?id=<%= category.id %>" class="btn btn-outline-danger">Delete</a>
+          </div>
+        </div>
+    </div>
+  </a>
+  </div>
+
+<% }) %>
+
+</div>
+

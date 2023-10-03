@@ -195,6 +195,15 @@ color: #d21d96;
   align-self: center;
   /* width: 100%; */
 }
+.category-img{
+  padding: 10%;
+  align-self: center;
+  width: 80%;
+}
+
+.category-card{
+  text-align: center;
+}
 
 .playlist-name{
   color: white;
