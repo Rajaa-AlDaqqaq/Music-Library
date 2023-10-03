@@ -1,11 +1,52 @@
 <div class="playlist">
 <h1>Playlists</h1>
 </div>
-
+<!-- 
 <div class="list">
 <ul>
   <% userPlaylist.forEach(function(playlist) { %>  
-    <li> <a href="/playlist/detail?id=<%= playlist._id %>"><%= playlist.name %></a>  <a href="/playlist/edit?id=<%= playlist._id %>" class="btn btn-outline-secondary"> Edit </a> <a href="/playlist/delete?id=<%= playlist._id %>" class="btn btn-outline-danger"> Delete </a></li>
+    <li> 
+
+      <a href="/playlist/detail?id=<%= playlist._id %>" ><%= playlist.name %></a>
+      
+      <a href="/playlist/edit?id=<%= playlist._id %>" class="btn btn-outline-secondary"> Edit </a>
+      
+      <a href="/playlist/delete?id=<%= playlist._id %>" class="btn btn-outline-danger"> Delete </a>
+    
+    </li>
 <% }) %>
 </ul>
+</div> -->
+
+
+
+
+
+
+<div class="cards ">
+  <% userPlaylist.forEach(function(playlist) { %>  
+    <div class="card " style="width: 18rem;">
+      <a href="/playlist/detail?id=<%= playlist._id %>" class="playlist-name">
+
+      <img src="/background/add-to-playlist-w.png" class="card-img-top playlist-img" alt="<%= playlist.name %> Image">
+    <div class="card-body playlist-card">
+        <h5 class="card-title" >
+          <%= playlist.name %>
+        </h5>  
+        
+        <div class="edit-delete-music">
+          <div class="edit">
+            <a href="/playlist/edit?id=<%= playlist._id %>" class="btn btn-outline-secondary"> Edit </a>
+          </div>
+          <div class="delete">
+            <a href="/playlist/delete?id=<%= playlist._id %>" class="btn btn-outline-danger"> Delete </a>
+          </div>
+        </div>
+
+    </div>
+  </a>
+  </div>
+
+<% }) %>
+
 </div>

@@ -1,6 +1,9 @@
-<h1>Edit Playlists</h1>
+<div class="pagetitle">
+  <h1>Edit Playlists</h1>
+</div>
+<div class="playlist-box">
 <form method="POST" action="/playlist/update?_method=PUT" class="form-style mid-style">
-<div class="col-md-10">
+<div class="col-md-10 ">
   <label class="form-text playlist-style">Playlist Name</label>
   <input type="text" name="name" value="<%= playlist.name  %>" class="form-control"/>
   <input type="hidden" name="id" value="<%= playlist._id %>">
@@ -10,3 +13,4 @@
 
 </button>
 </form>
+</div>

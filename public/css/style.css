@@ -123,7 +123,7 @@ color: #d21d96;
 .button-style{
   font-size: large;
   display: block;
-  width:150px;
+  /* width:150px; */
   margin: 10px auto;
   background: #FF10F0;
   justify-content: center;
@@ -185,11 +185,28 @@ color: #d21d96;
   margin: auto;
   padding: 20px;   */
   display: flex;
-  /* align-items: center; */
   text-align: center;
   justify-content: center;
   
 }
+
+.playlist-img{
+  padding: 10%;
+  align-self: center;
+  /* width: 100%; */
+}
+
+.playlist-name{
+  color: white;
+  text-decoration: none;
+}
+
+.playlist-card{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .mid-style{
   justify-content: center;
   
@@ -216,7 +233,7 @@ color: #d21d96;
   height:80%;
 }
 
-.explore, .myLibrary, .categories, .playlist, .create-playlist{
+.explore, .myLibrary, .categories, .playlist, .create-playlist, .pagetitle{
   padding: 2.5% 0;
   text-align: center;
 }
