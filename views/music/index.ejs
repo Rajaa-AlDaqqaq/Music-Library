@@ -19,7 +19,7 @@
       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">
         Add to playlist
       </a>
-      <form action="/music/addToPlaylist?_method=PUT" method="post">
+      <form action="/music/detail?_method=PUT" method="post">
       <ul class="dropdown-menu">
         <input type="hidden" name="id" value="<%= music._id %>">
         <% userPlaylist.forEach(function(playlist) { %>  

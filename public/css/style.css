@@ -64,7 +64,7 @@ color: #d21d96;
 /* .form-content{
   size: 100px;
 } */
-.signup-heading{
+.form-heading{
   text-align: center;
 }
 .form-control{
@@ -73,14 +73,14 @@ color: #d21d96;
   align-content: center;
 }
 
-/* review */
-form{
+
+.form-style{
   background-color: #2C343A;
-  width: 37%;
+  width: 39%;
   height: fit-content;
-  margin: 2% 3%;
-  padding: 0.25%;
-  border-radius: 5%;
+  margin:2%;
+  padding: 1.5%;
+  border-radius: 3%;;
 }
 .form-text{
   margin-left: 10%;
@@ -92,16 +92,6 @@ form{
   align-items: center;
   text-align: left;
 }
-/* 
-button:hover {
-  background-color:#ff0080; 
-  color: white
-}
-.btn, .btn-primary{
-  background-color:#FF10F0;
-  /* margin-left: 65%;
-
-} */
 
 
 .cards{
@@ -125,4 +115,42 @@ button:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.button-style{
+  font-size: large;
+  display: block;
+  width:150px;
+  margin: 10px auto;
+  background: #FF10F0;
+  justify-content: center;
+  border: 0;
+  color: white;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: #131415;
+} 
+
+.button-style:hover {
+  background-color:#ff0080; 
+  color: white;
+}
+
+.profile-Picture{
+  color: transparent;
+  margin: 60% 30%;
+  position: relative;
+  border-radius: 50%;
+
+}
+.detail-background{
+  background-image: url("/background/bg2.jpg");
+  background-size: cover;
+  display: flex;
+}
+.user-detail{
+  align-content:flex-end;
+  margin: 12%;
 }
