@@ -6,40 +6,40 @@
 
 </head>
 <body>
-  <form action="/music/add" method="POST" enctype="multipart/form-data">
-    <div>
-      <label>Music Name</label>
-      <input type="text" name="name">
+  <form class="form-style" action="/music/add" method="POST" enctype="multipart/form-data">
+    <div class="col-md-10">
+      <label class="form-text">Music Name</label>
+      <input type="text" name="name" class="form-control">
     </div>
     <br>
-    <div>
-      <label>Name of the author</label>
-      <input type="text" name="author">
+    <div class="col-md-10">
+      <label class="form-text">Name of the author</label>
+      <input type="text" name="author" class="form-control">
     </div>
     <br>
-    <div>
-      <label>Description</label>
-      <input type="text" name="description" />
+    <div class="col-md-10">
+      <label class="form-text">Description</label>
+      <input type="text" name="description" class="form-control"/>
     </div>
     <br>
-    <div>
-      <label>lyrics</label>
-      <input type="text" name="lyrics">
+    <div class="col-md-10">
+      <label class="form-text">lyrics</label>
+      <input type="text" name="lyrics" class="form-control">
     </div>
     <br>
-    <div>
-      <label>Audio</label>
-      <input type="file" name="audio" accept="audio/*" required>
+    <div class="col-md-10">
+      <label class="form-text">Audio</label>
+      <input type="file" name="audio" accept="audio/*" required class="form-control">
     </div>
   
-    <div>
-      <label>Image</label>
-      <input type="file" name="image" accept="image/*" required>
+    <div class="col-md-10">
+      <label class="form-text">Image</label>
+      <input type="file" name="image" accept="image/*" required class="form-control">
     </div>
 
 
-    <div class="form-group">
-      <label>Categories </label>
+    <div class="form-group col-md-10">
+      <label class="form-text">Categories </label>
       <select name="categories[]" multiple="multiple" id="category" class="form-control">
         <% categories.forEach(function(category) { %>
           <option value="<%= category._id %>"><%= category.name %></option>
@@ -52,7 +52,7 @@
 
     <input type="hidden" name="id" value="<%= currentUser._id %>">
   
-    <button type="submit"> Add Music </button>
+    <button type="submit" class="btn btn-primary button-style"> Add Music </button>
   </form>
 </body>
 </html>

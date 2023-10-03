@@ -1,40 +1,40 @@
-<h1>Update profile</h1>
-<form method="POST" action="/auth/update" enctype="multipart/form-data">
-
-
-  <div>
-    <label>Name</label>
-    <input type="text" name="name" value="<%= user.name %>"/>
-  </div>
+<body class="edit-background">
+  <form class="form-style" method="POST" action="/auth/update" enctype="multipart/form-data">
+  <h1 class="form-heading">Update profile</h1>
+  
+    <div class="col-md-10">
+      <label class="form-text">Name</label>
+      <input type="text" name="name" value="<%= user.name %>" class="form-control"/>
+    </div>
+    <br>
+    <div class="col-md-10">
+      <label class="form-text">Email Address</label>
+      <input type="email" name="emailAddress" value="<%= user.emailAddress %>"class="form-control"/>
+    </div>
+    <br>
+    <div class="col-md-10">
+      <label class="form-text">Password</label>
+      <input type="password" name="password" value="<%= user.password %>" class="form-control"/>
+    </div>
+    <br>
+  <div class="col-md-10">
+      <label class="form-text">Profile Picture</label>
+      <input type="file" name='profilePicture' accept="image/*" class="form-control">
+    </div>
+    <br>
+    <div class="col-md-10">
+      <label class="form-text">gender</label>
   <br>
-  <div>
-    <label>Email Address</label>
-    <input type="email" name="emailAddress" value="<%= user.emailAddress %>"/>
-  </div>
+        <input class="form-text" type="radio" name="gender" id="male" value="Male" checked>
+        <label class="form-text" for="male">Male</label>
   <br>
-  <div>
-    <label>Password</label>
-    <input type="password" name="password" value="<%= user.password %>"/>
-  </div>
-  <br>
-<div>
-    <label>Profile Picture</label>
-    <input type="file" name='profilePicture' accept="image/*">
-  </div>
-  <br>
-  <div>
-    <label>gender</label>
-<br>
-      <input type="radio" name="gender" id="male" value="Male" checked>
-      <label for="male">Male</label>
-<br>
-      <input type="radio" name="gender" id="female" value="Female">
-      <label for="female">Female</label>
-  </div>
-  <br>
-  <div>
-    <label>Date Of Birth</label>
-    <input type="date" name="dateOfBirth"value="<%= user.dateOfBirth %>"/>
-  </div>
-  <div><button type="submit">Update</button></div>
-</form>
+        <input class="form-text" type="radio" name="gender" id="female" value="Female">
+        <label class="form-text" for="female">Female</label>
+    </div>
+    <br>
+    <div class="col-md-10">
+      <label class="form-text">Date Of Birth</label>
+      <input type="date" name="dateOfBirth"value="<%= user.dateOfBirth %>"class="form-control"/>
+    </div>
+    <div><button type="submit" class="btn btn-primary button-style">Update</button></div>
+  </form></body>
