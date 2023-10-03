@@ -138,17 +138,26 @@ color: #d21d96;
   color: white;
 }
 
-.profile-Picture{
-  color: transparent;
+.pc-style, .profile-Picture{
+  /* color: transparent; */
   /* margin-top:60%; */
   position: relative;
   border-radius: 50%;
-  width:300px;
+  width:350px;
   /* max-width: 60vh; */
-  height:250px;
-  margin-top: 30%;
-  margin-left: 10%;
+  height:350px;
+  /* margin-top: 30%;
+  margin-left: 10%; */
+  object-fit: cover;
+  display: block;
+  
 }
+
+.pc-style{
+  margin-top: 2%;
+  margin-left: 3%;
+}
+
 .main-background{
   background-image: url("/background/bg.png");
   background-size: cover;
@@ -162,6 +171,7 @@ color: #d21d96;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
+  margin-top: 3%;
 }
 .playlist-style{
   font-size: x-large;

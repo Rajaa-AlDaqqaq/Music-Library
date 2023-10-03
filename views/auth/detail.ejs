@@ -6,29 +6,29 @@
 
 <div class="col-md-10">
   <label class="form-text" for="disabledTextInput" class="form-label">Name</label>
-  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.name %>"> 
+  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.name %>" readonly> 
 </div>
 
 
 <div class="col-md-10">
   <label class="form-text" for="disabledTextInput" class="form-label">Name</label>
-  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.emailAddress %>">
+  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.emailAddress %>" readonly>
 </div>
 
 
 <div class="col-md-10">
   <label class="form-text" for="disabledTextInput" class="form-label">Gender</label>
-  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.gender %>"></div>
+  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.gender %>" readonly></div>
 
   <div class="col-md-10">
     <label class="form-text" for="disabledTextInput" class="form-label">Date of Birth</label>
-    <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.dateOfBirth %>">
+    <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.dateOfBirth.toDateString() %>" readonly>
   </div>
 
-</form>
+  </form>
 
-<div class="pc-style">
-<img class="profile-Picture" src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" ></div>
+  <div class="pc-style">
+  <img class="profile-Picture" src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" ></div>
 
 
 </div>
