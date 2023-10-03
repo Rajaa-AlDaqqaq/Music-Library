@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>playlist</title>
-</head>
-<body>
+<div class="create-playlist">
+  <h1>Create a Playlist</h1>
+</div>
 <div class="playlist-box">
   <form action="/playlist/add" method="POST" class="form-style mid-style">
     <div class="col-md-10">
-      <label class="form-text playlist-style" >Playlists</label>
+      <label class="form-text playlist-style" >Playlist:</label>
       <input type="text" name="name" class="form-control">
-</div>
+    </div>
       <input type="hidden" name="id" value="<%= currentUser._id %>" class="form-control">
       <button type="submit" class="btn btn-primary button-style"> Add playlist </button>
-</div>
-  </form>
-  </body>
+    </form>
+  </div>
+

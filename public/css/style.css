@@ -17,6 +17,9 @@ nav{
 body{
   background-image: url("/background/background-gradient-lights-darker.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
   color: white;
   font-family: 'Bauhaus 93', sans-serif;
   margin: 0;
@@ -178,9 +181,13 @@ color: #d21d96;
   text-align: center;
 }
 .playlist-box{
-  border: 5px;
+  /* border: 5px;
   margin: auto;
-  padding: 20px;  
+  padding: 20px;   */
+  display: flex;
+  /* align-items: center; */
+  text-align: center;
+  justify-content: center;
   
 }
 .mid-style{
@@ -209,7 +216,7 @@ color: #d21d96;
   height:80%;
 }
 
-.explore, .myLibrary{
+.explore, .myLibrary, .categories, .playlist, .create-playlist{
   padding: 2.5% 0;
   text-align: center;
 }
