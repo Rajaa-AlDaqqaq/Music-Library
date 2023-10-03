@@ -26,7 +26,7 @@ The Music Library is a web application designed for music enthusiasts and collec
 
 ## Deployed app
 
-##### The project is deployed in [name](surge url)
+##### The project is deployed in [name](url)
 
 
 
