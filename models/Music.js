@@ -8,16 +8,22 @@ const musicSchema = mongoose.Schema(
     lyrics: String,
     image: String,
     audio: String,
-    category:[
+    category: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref:'Category'
+        ref: 'Category'
+      }
+    ],
+    playlist: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Playlist'
       }
     ],
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-    },
+      ref: 'User'
+    }
   },
   {
     timestamps: true //means createdAt and updateAt
@@ -26,4 +32,4 @@ const musicSchema = mongoose.Schema(
 
 const Music = mongoose.model('Music', musicSchema)
 
-module.exports = {Music}
+module.exports = { Music }

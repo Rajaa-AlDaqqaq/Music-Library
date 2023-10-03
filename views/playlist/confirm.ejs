@@ -1,0 +1,10 @@
+<h1> <%= playlist.name %> </h1>
+
+<ul>
+    <% playlist.music.forEach(function(music) { %>
+    <li> <a href="/music/detail?id=<%= music._id %>">
+      <%= playlist.music.name %> 
+    </a> 
+    </li>
+    <% }) %>
+</ul>
