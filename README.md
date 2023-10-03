@@ -23,25 +23,19 @@ The Music Library is a web application designed for music enthusiasts and collec
 
 ***
 
-## Getting Started
-
-...............
 
 ## Deployed app
 
-##### The project is deployed in surge [name](surge url)
+##### The project is deployed in [name](url)
 
-## Screenshots
-##### HomePage
-![Home Page](url)
 
 
 ## Future Updates
 
-- [ ] name
-- [x] name
+- [ ] Likes
+- [ ] add playlist controls (play next, move, shuffle, repeat)
+- [ ] import music from youtube link
 
 
-## Credits
-name of feature: [displayed url](url)
+
 

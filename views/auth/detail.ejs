@@ -1,12 +1,12 @@
-<div class="detail-background">
+<body class="detail-background">
 
-
+<div class="detail-box">
 <form class="form-style user-detail">
   <h1 class="form-heading">Profile</h1>
 
 <div class="col-md-10">
   <label class="form-text" for="disabledTextInput" class="form-label">Name</label>
-  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.name %>">
+  <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.name %>"> 
 </div>
 
 
@@ -28,7 +28,8 @@
 </form>
 
 <div class="pc-style">
-<img class="profile-Picture" src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" width="300" height="300" ></div>
+<img class="profile-Picture" src="<%= user.profilePicture.replace(/public/, '') %>" alt="<%= user.name %> Image" ></div>
 
 
 </div>
+</body>
