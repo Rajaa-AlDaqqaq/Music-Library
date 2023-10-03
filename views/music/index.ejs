@@ -1,79 +1,43 @@
 <!-- index - Explore - display musics from all users -->
-<h1>Explore!</h1>
-<div class="cards">
-<% musics.forEach(function(music) { %>  
+<div class="explore">
+  <h1 >EXPLORE !</h1>
+</div>
+  
 
-<div class="card" style="width: 18rem;">
-  <img src="<%= music.image.replace(/public/, '') %>" class="card-img-top" alt="<%= music.name %> Image">
-  <div class="card-body">
-    <h5 class="card-title"><a href="/music/detail?id=<%= music._id %>"><%= music.name %></a></h5>
-    <p class="card-text">
-      Author: <%= music.author %>
-      <br>
-      Description: <%= music.description %>
+  <div class="cards">
+    <% musics.forEach(function(music) { %>  
       
-    </p>
-    <a href="/music/detail?id=<%= music._id %>" class="btn btn-primary">Play</a>
-
-    <div class="dropdown">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">
-        Add to playlist
+      <div class="card" style="width: 18rem;">
+  <img src="<%= music.image.replace(/public/, '') %>" class="card-img-top cardImg" alt="<%= music.name %> Image">
+  <div class="card-body">
+    <h5 class="card-title"><a href="/music/detail?id=<%= music._id %>" class="musicname"><%= music.name %></a></h5>
+    <!-- <a href="/music/detail?id=<%= music._id %>" class="btn btn-primary">Play</a> -->
+    
+    <div class="dropdown dropdown1" >
+      <a class="btn btn-secondary dropdown-toggle dropdown2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link" >
+        <img src="/background/add-to-playlist-w.png" alt="" width="100%">
       </a>
       <form action="/music/detail?_method=PUT" method="post">
-      <ul class="dropdown-menu">
-        <input type="hidden" name="id" value="<%= music._id %>">
-        <% userPlaylist.forEach(function(playlist) { %>  
+        <ul class="dropdown-menu">
+          <input type="hidden" name="id" value="<%= music._id %>">
+          <% userPlaylist.forEach(function(playlist) { %>  
+            
+            <li>
+              <input type="radio" name="playlistID"  value="<%= playlist._id %>">
+              
+              <label><%= playlist.name %></label>
+              
+            </li>
+            
+            <% }) %>
+            <li><button type="submit">Add to Playlists</button></li>
+          </ul>
+        </form>
+      </div>
 
-        <li>
-          <input type="radio" name="playlistID"  value="<%= playlist._id %>">
-          
-          <label><%= playlist.name %></label>
-          
-        </li>
-        
-        <% }) %>
-          <li><button type="submit">Add to Playlists</button></li>
-      </ul>
-    </form>
     </div>
-
   </div>
-</div>
-
-<% }) %>
-
-</div>
-
-<table class="table table-striped" >
-  <tr>
-    <th>Name of the music</th>
-    <th>Author</th>
-    <th>Description</th>
-    <th>Lyrics</th>
-    <th>Image</th>
-    <th>Audio</th>
-    <th>Created At</th>
-    <th>Updated At</th>
-
-  </tr>
-
-  <% musics.forEach(function(music) { %>  
-    <tr>
-      <td><a href="/music/detail?id=<%= music._id %>"><%= music.name %></a></td>
-      <td><%= music.author %></td>
-      <td><%= music.description %></td>
-      <td><%= music.lyrics %></td>
-      <td><img src="<%= music.image.replace(/public/, '') %>" alt="<%= music.name %> Image" width="300" height="200"></td>
-      <td>
-        <audio controls>
-          <source src="<%= music.audio.replace(/public/, '') %>" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      </td>
-      <td><%= moment(music.createdAt).fromNow() %></td>
-      <td><%= moment(music.updatedAt).fromNow() %></td>
-      
-    </tr>
-
+  
   <% }) %>
-</table>
+  
+</div>
