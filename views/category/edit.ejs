@@ -4,34 +4,27 @@
 </head>
 <body>
 
-<h1>Update Category</h1>
+<h1 class="pagetitle">Update Category</h1>
 
-<div>
-<h3> Current Name: 
-<%= category.name %> </h3>
-
-<h3> Current Discription:  <%= category.description %> </h3>
-
-</div>
-
-<form method="post" action="/category/edit">
-  <input type="hidden" name="id" value="<%= category._id %>">
-    <div>
-        <label for="categoryName">Name of Category:</label>
-        <input type="text" id="categoryName" name="name">
+<div class="catogry-box">
+<form method="post" action="/category/edit" class="form-style">
+  <input type="hidden" name="id" value="<%= category._id %>" >
+    <div class="col-md-10">
+        <label class="form-text" for="categoryName">Name of Category:</label>
+        <input type="text" id="categoryName" name="name" class="form-control" placeholder="<%= category.name %> ">
     </div>
     <br>
 
-    <div>
-        <label for="categoryDescription">Description:</label>
-        <input type="text" id="categoryDescription" name="description">
+    <div class="col-md-10">
+        <label class="form-text" for="categoryDescription">Description:</label>
+        <input type="text" id="categoryDescription" name="description" class="form-control"placeholder=" <%= category.description %> ">
     </div>
     <br>
 
-    <div>
-        <button type="submit">Update Category</button>
+    <div >
+        <button type="submit" class="btn btn-primary button-style">Update Category</button>
     </div>
 </form>
-
+</div>
 </body>
 
