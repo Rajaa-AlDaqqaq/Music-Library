@@ -1,7 +1,11 @@
-<h1><%= category.name %></h1>
-<p>Description: <%= category.description %></p>
-<h2>Music</h2>
-<ul>
+<div class="explore">
+  <h1><%= category.name %></h1>
+  <p>Description: <%= category.description %></p>
+</div>
+
+
+<!-- <h2>Music</h2> -->
+<!-- <ul>
   <% if (category.music && category.music.length > 0) { %>
     <% category.music.forEach(function (music) { %>
       <li>
@@ -12,4 +16,56 @@
   <% } else { %>
     <li>No music found for this category.</li>
   <% } %>
-</ul>
+</ul> -->
+
+
+
+<div class="cards">
+    
+  <% if (category.music && category.music.length > 0) { %>
+    <% category.music.forEach(function (music) { %>    
+    <div class="card" style="width: 18rem;">
+      <!-- <a href="/music/detail?id=<%= music._id %>" class="musicname "> -->
+        <!-- <div> -->
+          
+      <img src="<%= music.image.replace(/public/, '') %>" class="card-img-top exploreimg cardImg" alt="<%= music.name %> Image">
+      <div class="card-body">
+        
+        <h5 class="card-title">
+          <a href="/music/detail?id=<%= music._id %>" class="musicname ">
+          <%= music.name %>
+          </a>
+        </h5>
+        
+        <div class="dropdown dropdown1" >
+          <a class="btn btn-secondary dropdown-toggle dropdown2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link" >
+            <img src="/background/add-to-playlist-w.png" alt="" width="100%"  >
+          </a>
+          <form action="/music/detail?_method=PUT" method="post">
+            <ul class="dropdown-menu">
+              <input type="hidden" name="id" value="<%= music._id %>">
+              <% userPlaylist.forEach(function(playlist) { %>  
+                
+                <li>
+                  <input type="radio" name="playlistID"  value="<%= playlist._id %>">
+                  
+                  <label><%= playlist.name %></label>
+                  
+                </li>
+                
+                <% }) %>
+                <li><button type="submit">Add to Playlists</button></li>
+              </ul>
+            </form>
+          </div>
+
+        </div>
+      <!-- </div>
+    </a> -->
+    </div>
+
+<% }) %>
+<% } else { %>
+  <h3>No music found for this category.</h3>
+<% } %>
+</div>
