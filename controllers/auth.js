@@ -69,27 +69,29 @@ exports.auth_update_post = (req, res) => {
   profilePicture  = req.file.path
   }
 
-  let hashedPassword = password
-  if (password) {
-    hashedPassword = bcrypt.hashSync(password, salt)
-  }
+  User.findById(userId)
+    .then((user) => {
+      if (req.body.prev !== password) {
+        let hashPass = bcrypt.hashSync(password, salt);
+        user.password = hashPass;
+      }
 
-   User.findByIdAndUpdate(userId, { $set: {
-    name,
-    emailAddress,
-    password:hashedPassword,
-    profilePicture,
-    gender,
-    dateOfBirth,
-  }})
+      user.name = name;
+      user.emailAddress = emailAddress;
+      user.profilePicture = profilePicture;
+      user.gender = gender;
+      user.dateOfBirth = dateOfBirth;
+
+      return user.save(); // Save the updated user document
+    })
+
     .then(() => {
-      res.redirect("/auth/detail")
+      res.redirect("/auth/detail");
     })
     .catch((err) => {
-      console.log( "did not enter one of the fields or Uploaded pic ", err)
-    })
-  
-}
+      console.log( err);
+    });
+};
 // show detail
 exports.auth_show_get = async (req, res) => {
   try {
