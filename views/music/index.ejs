@@ -9,16 +9,16 @@
     <% musics.forEach(function(music) { %>  
       
       <div class="card" style="width: 18rem;">
-        <a href="/music/detail?id=<%= music._id %>" class="musicname ">
-          <div>
+        <!-- <a href="/music/detail?id=<%= music._id %>" class="musicname "> -->
+          <!-- <div> -->
             
         <img src="<%= music.image.replace(/public/, '') %>" class="card-img-top exploreimg cardImg" alt="<%= music.name %> Image">
         <div class="card-body">
           
           <h5 class="card-title">
-            <!-- <a href="/music/detail?id=<%= music._id %>" class="musicname "> -->
+            <a href="/music/detail?id=<%= music._id %>" class="musicname ">
             <%= music.name %>
-            <!-- </a> -->
+            </a>
           </h5>
           
           <div class="dropdown dropdown1" >
@@ -44,8 +44,8 @@
             </div>
 
           </div>
-        </div>
-      </a>
+        <!-- </div>
+      </a> -->
       </div>
   
   <% }) %>

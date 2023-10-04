@@ -5,13 +5,13 @@
 
 .musicplayer{
   font-size: small;
-  font-style: italic;
+  /* font-style: italic; */
   backdrop-filter: blur(20px);
   text-align: center;
   margin: 50px;
   font-family: 'roboto', sans-serif ;
-  width:350px;
-  height: 550px;
+  width:100vh;
+  height: 80vh;
   border-radius: 20px;
   background: rgba(255,255,255,0.08);
   box-shadow: 0 40px, 100px rgba(255,255,255,0.1) ;
@@ -124,7 +124,7 @@ top:60%
   }
 }
 
-.btn{
+/* .btn{
   width: 40px;
   height: 40px;
   background: wheat;
@@ -134,12 +134,12 @@ top:60%
   align-items: center;
   border: none;
   cursor: pointer;
-  background-color: #ff6347; /
+  background-color: #ff6347; 
   color: white;
   font-weight: bold;
   font-size: 20px;
   transition: background-color 0.3s ease;
-}
+} */
 
 .btn:hover {
   background-color: #ff4500; /* Change the hover background color as needed */

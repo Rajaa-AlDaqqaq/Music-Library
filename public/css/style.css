@@ -11,6 +11,7 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* justify-content: space-around; */
   align-items: center;
 }
 
@@ -35,6 +36,7 @@ body{
   color: white;
   text-decoration: none;
   font-size: large;
+  margin: 0 1%;
   /* font-family: 'Bauhaus 93', sans-serif; */
 }
 
