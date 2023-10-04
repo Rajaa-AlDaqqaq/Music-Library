@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <link rel="stylesheet" href="/css/music.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <body>
     <div class="musicplayer">
@@ -11,15 +12,14 @@
         <source src="<%= music.audio.replace(/public/, '') %>" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-
-
       <div class="song-slider">
         <input type="range" value="0" class="seekbar">
         <span class="current">00:00 <br></span>
         <span class="after">00:00 <br></span>
       </div>
-      
-      <button class="play-pause">Play</button>
+
+      <i class="bi bi-play" id="play-icon" style="font-size: 5rem; color: rgb(0, 0, 0); display: inline-block;"></i>
+      <i class="bi bi-pause" id="pause-icon" style="font-size: 5rem; color: rgb(0, 0, 0); display: none;"></i>
 
     </div>
 
