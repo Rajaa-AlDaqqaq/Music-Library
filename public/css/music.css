@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Roboto&display=swap');
 
-.musicplayer{
-font-size: small;
-font-style: italic;
-backdrop-filter: blur(20px);
-position: relative;
-text-align: center;
-margin: 50px;
-font-family: 'roboto', sans-serif ;
-}
+
+
 
 .musicplayer{
+  font-size: small;
+  font-style: italic;
+  backdrop-filter: blur(20px);
+  text-align: center;
+  margin: 50px;
+  font-family: 'roboto', sans-serif ;
   width:350px;
   height: 550px;
   border-radius: 20px;
   background: rgba(255,255,255,0.08);
   box-shadow: 0 40px, 100px rgba(255,255,255,0.1) ;
-
-
+  animation: pulse 1s infinite alternate;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .music-name,.artist-name{
@@ -29,10 +31,14 @@ text-transform: capitalize;
   font-size: 40px;
   font-weight: 500;
   margin-bottom: 10px;
+  
 }
 
 .artist-name{
   font-size: 20px;  
+}
+.disk.play {
+  animation-play-state: running;
 }
 
 .disk {
@@ -62,11 +68,11 @@ text-transform: capitalize;
 }
 .seekbar{
   -webkit-appearance: none;
-  width: 100%;
+  width: 80%;
   height: 5px;
   border-radius: 10px;
   overflow: hidden;
-  background: yellow;
+  background: rgb(217, 217, 217);
   cursor: pointer;
 }
 .seekbar::-webkit-slider-thumb{
@@ -74,7 +80,7 @@ text-transform: capitalize;
   width: 10px;
   height: 20px;
   background: black;
-  box-shadow: -400px 0 0 400px green;
+  box-shadow: -400px 0 0 400px rgb(2, 106, 251);
 
 }
 
@@ -100,49 +106,10 @@ top:60%
   align-items: center;
   margin: auto;
   margin-top: 20px;  
-}
-
-.play-btn{
-  position: relative;
-  width:60px;
-  height: 60px;
-  border-radius:50%;
-  background: white;
-  cursor: pointer;
-  border: none;
-}
-.play-btn span{
-position: absolute;
-top:50%;
-left: 25%;
-transform: translateY(-50%);
-width: 10px;
-height: 30px;
-border-radius: 2px;
-transition: .5s;
-background: yellow;
-clip-path: polygon(0 0, 100% 100%, 0% 100%);
+  margin-top: 20px;
 }
 
 
-.play-btn span:nth-child(2){
-  left:55%;
-  transform-origin:center;
-}
-
-.play-btn.pause span:nth-child(2){
-  transform: translateY(-50%) scaleY(0);
-}
-
-
-.play-btn.pause span:nth-child(1){
-width: 35%;
-left:53%;
-transform: translate(-50%,-50%);
-border-radius: 0;
-clip-path: polygon(0 0,100% 50% , 100% 50%, 0% 100%);
-
-}
 
 
 @keyframes pulse{
@@ -167,8 +134,16 @@ clip-path: polygon(0 0,100% 50% , 100% 50%, 0% 100%);
   align-items: center;
   border: none;
   cursor: pointer;
+  background-color: #ff6347; /
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
 }
 
+.btn:hover {
+  background-color: #ff4500; /* Change the hover background color as needed */
+}
 
 @keyframes rotate{
   0%{

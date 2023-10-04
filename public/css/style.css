@@ -180,7 +180,7 @@ color: #d21d96;
   font-size: x-large;
   text-align: center;
 }
-.playlist-box{
+.playlist-box, .catogry-box{
   /* border: 5px;
   margin: auto;
   padding: 20px;   */
