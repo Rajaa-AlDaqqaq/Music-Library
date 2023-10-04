@@ -9,9 +9,9 @@
   <h1>Music List</h1>
 
   <div class="musicplayer">
-    <h1 class="music-name"></h1>
-    <p class="music-author"></p>
-    <img class="music-image" height="300" width="300" alt="">
+    <h1 class="music-name"><%= musics[0].name %></h1>
+    <p class="music-author"><%= musics[0].author %></p>
+    <img class="music-image" src="musics[0].image.replace(/public/,'')" height="300" width="300" alt="">
     <audio id="audioPlayer" controls>
       Your browser does not support the audio element.
     </audio>
@@ -24,11 +24,51 @@
     
     <button id="nextButton">Next</button>
     <button class="play-pause">Play</button>
-    <button id="nextButton">back</button>
-    <button id="nextButton">back</button>
-    <button id="nextButton">shuffle</button>
+    <button id="backButton">Back</button>
+    <button id="shuffleButton">Shuffle</button>
   </div>
 
--
+  <script>
+    const musics = <%- JSON.stringify(musics) %>
+    let currentIndex = 0
+
+    const musicNameElement = document.querySelector('.music-name')
+    const musicAuthorElement = document.querySelector('.music-author')
+    const musicImageElement = document.querySelector('.music-image')
+    const audioElement = document.getElementById('audioPlayer')
+    const nextButton = document.getElementById('nextButton')
+    const backButton = document.getElementById('backButton')
+    const shuffleButton = document.getElementById('shuffleButton')
+
+    function displayMusicDetails(index) {
+      const music = musics[index]
+
+      musicAuthorElement.textContent = music.author
+      musicImageElement.src = music.image.replace(/public/, '')
+      audioElement.src = music.audio.replace(/public/, '')
+      audioElement.load()
+      audioElement.play()
+    }
+
+    function displayNextMusic() {
+      currentIndex = (currentIndex + 1) % musics.length
+      displayMusicDetails(currentIndex)
+    }
+    
+    function displayPrevMusic() {
+      currentIndex = (currentIndex - 1 + musics.length) % musics.length
+      displayMusicDetails(currentIndex)
+    }
+
+    function shuffleMusic(){
+      let random = Math.floor(Math.random() * musics.length)
+      displayMusicDetails(random)
+    }
+
+    displayMusicDetails(currentIndex)
+    nextButton.addEventListener('click', displayNextMusic)
+    backButton.addEventListener('click', displayPrevMusic)
+    shuffleButton.addEventListener('click', shuffleMusic)
+  </script>
 </body>
 </html>
