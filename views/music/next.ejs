@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/music.css">
+  <script src="/script/music.js" defer></script>
+  <title>Music List</title>
+</head>
+<body>
+  <h1>Music List</h1>
+
+  <div class="musicplayer">
+    <h1 class="music-name"></h1>
+    <p class="music-author"></p>
+    <img class="music-image" height="300" width="300" alt="">
+    <audio id="audioPlayer" controls>
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="song-slider">
+      <input type="range" value="0" class="seekbar">
+      <span class="current">00:00 <br></span>
+      <span class="after">00:00 <br></span>
+    </div>
+    
+    <button id="nextButton">Next</button>
+    <button class="play-pause">Play</button>
+    <button id="nextButton">back</button>
+    <button id="nextButton">back</button>
+    <button id="nextButton">shuffle</button>
+  </div>
+
+-
+</body>
+</html>
