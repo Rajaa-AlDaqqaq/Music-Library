@@ -32,7 +32,17 @@
       </div>
       
       <a href="/music/myLibrary" class="navLink">MY LIBRARY</a>
-      <a href="/category/index" class="navLink">CATEGORIES</a>
+
+        <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">
+          CATEGORY
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/category/add">CREATE CATEGORY</a></li>
+          <li><a class="dropdown-item" href="/category/index">VIEW CATEGORIES</a></li>
+          <li></li>
+        </ul>
+      </div>
 
       <div class="dropdown">
         <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link" href="/playlist/index" class="navLink">

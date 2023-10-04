@@ -1,51 +1,42 @@
-<h1> <%= music.name %> </h1>
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/css/music.css">
 
-<div>
-  Author: <%= music.author %>
-</div>
-
-<div>
-  Description: <%= music.description %>
-</div>
-
-<div>
-  Lyrics: <%= music.lyrics %>
-</div>
-
-<div>
-  Image: <img src="<%= music.image.replace(/public/, '') %>" alt="<%= music.name %> Image" width="300" height="200">
-</div>
-
-<div>
-  Audio: <audio controls>
-    <source src="<%= music.audio.replace(/public/, '') %>" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
+  <body>
+    <div class="musicplayer">
+      <h1 class="music-name"><%= music.name %></h1>
+      <p class="artist-name"><%= music.author %></p>
+      <img class="disk" src="<%= music.image.replace(/public/, '') %>" alt="">
+      <audio id="audio">
+        <source src="<%= music.audio.replace(/public/, '') %>" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
 
 
+      <div class="song-slider">
+        <input type="range" value="0" class="seekbar">
+        <span class="current">00:00 <br></span>
+        <span class="after">00:00 <br></span>
+      </div>
+      
+      <button class="play-pause">Play</button>
 
-<div>
-  Created At: <%= moment(music.createdAt).fromNow() %>
-</div>
+    </div>
 
-<div>
-  Updated At: <%= moment(music.updatedAt).fromNow() %>
-</div>
+    <br><br>
+    <div class="categories">
+      <h2>Categories</h2>
+      <ul>
+        <% if (music.category && music.category.length > 0) { %>
+          <% music.category.forEach(function (category) { %>
+            <div>Category Name: <%= category.name %></div>
+          <% }) %>
+        <% } else { %>
+          <p>The music does not have any categories</p>
+        <% } %>
+      </ul>
+    </div>
 
-<br>
-
-<h2>Categories</h2>
-<ul>
-  <% if (music.category && music.category.length > 0) { %>
-    <% music.category.forEach(function (category) { %>
-      <li>
-        <div>Category Name: <%= category.name %></div>
-      </li>
-    <% }) %>
-  <% } else { %>
-    <li>The music does not have any categories</li>
-  <% } %>
-  
-  
-</ul>
+    <script src="/script/music.js"></script>
+  </body>
+</html>
