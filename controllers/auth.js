@@ -73,6 +73,7 @@ exports.auth_update_post = (req, res) => {
   if (password) {
     hashedPassword = bcrypt.hashSync(password, salt)
   }
+
    User.findByIdAndUpdate(userId, { $set: {
     name,
     emailAddress,
@@ -99,4 +100,4 @@ exports.auth_show_get = async (req, res) => {
     res.redirect("/")
   }
 }
-// profile picture upload
+//

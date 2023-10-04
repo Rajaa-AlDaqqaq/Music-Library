@@ -63,6 +63,7 @@ body{
 .user{
 color: #d21d96;
 -webkit-text-stroke: 0;
+font-size: 80px
 }
 
 
@@ -273,4 +274,20 @@ color: #d21d96;
 .cards{
   justify-content: space-around;
 }
+.empty-div{
+  /* display: flex; */
+  width: 50%;
+  height: 100%;
+}
+.content-div{
+  width: 50%;
+  height: 100%;
 
+}
+.page-div{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  justify-content: space-around;
+  text-align: center;
+}
