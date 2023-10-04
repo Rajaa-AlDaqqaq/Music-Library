@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Roboto&display=swap');
 
 
-
+.body, .music-name, .artist-name{
+  font-family: 'Bauhaus 93', sans-serif;
+}
 
 .musicplayer{
   font-size: small;

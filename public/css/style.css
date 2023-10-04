@@ -48,11 +48,11 @@ body{
 
 .ExploreBtn{
   color: white;
-  font-size: x-large;
+  font-size: 3rem;
   text-decoration: none;
   border: 1px solid #00FFFF;
-  border-radius: 25%;
-  padding: 1%;
+  border-radius: 20px;
+  padding: 2%;
 }
 
 .highlighted{
